@@ -1,26 +1,35 @@
-# WetSea Observatory — Brand Guidelines
+# WetAndSeaAI / WetSeaTech — Brand Guidelines
 
-## Brand Positioning
-A cinematic editorial observatory documenting the hidden systems connecting oceans, industry, and cloud infrastructures.
+## Positionnement
+Un observatoire éditorial technique du monde contemporain, entre océans, infrastructures et signaux.
 
-## Visual Character
-- Understated and precise.
-- Technical yet human-readable.
-- Geopolitical, logistical, and scientific.
+## Caractère de marque
+- Calme et précis.
+- Sophistiqué mais lisible.
+- Documentaire, technique, intemporel.
+- Narratif sans spectacle.
 
-## Signature Components
-1. **Cartographic Base Layers**: contours, maritime grids, coastlines.
-2. **Signal Annotations**: route IDs, node labels, timing marks.
-3. **Editorial Typography**: serif + sans with strict hierarchy.
-4. **Quiet Chroma**: dark neutrals with mineral accents.
+## Principes visuels
+1. **Espace négatif fort** : compositions respirantes et hiérarchies nettes.
+2. **Détails techniques subtils** : routes, annotations, repères instrumentaux.
+3. **Minimalisme éditorial premium** : retenue, cohérence, discipline typographique.
+4. **Système chromatique contrôlé** : bleu nuit, graphite, cyan discret, vert océan sombre, blanc cassé, sable minéral, aluminium mat.
 
-## Application Scope
-- YouTube covers and video thumbnails.
-- Podcast and NotebookLM covers.
-- Etsy product branding.
-- Editorial essays, maps, and social artifacts.
+## Interdits
+- Cyberpunk / RGB gaming / néons agressifs.
+- Style startup SaaS, merchandising YouTube, esthétique IA générique.
+- Codes crypto/web3 ou science-fiction cliché.
+- Mascottes cartoon, kawaii ou hyper expressives.
+- Surcharge graphique et logos surdimensionnés.
 
-## Consistency Rules
-- Use one visual thesis per composition.
-- Keep text blocks short and disciplined.
-- Avoid decorative effects without analytical purpose.
+## Applications
+Le système doit rester cohérent sur :
+- affiches,
+- vêtements sobres,
+- mugs premium,
+- stickers minimalistes,
+- podcast covers,
+- miniatures YouTube,
+- produits Etsy premium,
+- objets de bureau,
+- blog éditorial.
