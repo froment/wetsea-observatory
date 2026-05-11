@@ -1,35 +1,39 @@
 # WetAndSeaAI / WetSeaTech — Brand Guidelines
 
-## Positionnement
-Un observatoire éditorial technique du monde contemporain, entre océans, infrastructures et signaux.
+## Positioning
+A cinematic technical editorial observatory documenting hidden systems between oceans, infrastructures, and signals.
 
-## Caractère de marque
-- Calme et précis.
-- Sophistiqué mais lisible.
-- Documentaire, technique, intemporel.
-- Narratif sans spectacle.
+## Naming Consistency
+- Canonical identity name: **WetSea Observatory**.
+- "WetAndSeaAI" and "WetSeaTech" may be used as campaign or product labels, never as a replacement for the canonical brand name in core system files.
 
-## Principes visuels
-1. **Espace négatif fort** : compositions respirantes et hiérarchies nettes.
-2. **Détails techniques subtils** : routes, annotations, repères instrumentaux.
-3. **Minimalisme éditorial premium** : retenue, cohérence, discipline typographique.
-4. **Système chromatique contrôlé** : bleu nuit, graphite, cyan discret, vert océan sombre, blanc cassé, sable minéral, aluminium mat.
+## Brand Character
+- Calm and precise.
+- Sophisticated but readable.
+- Documentary, technical, timeless.
+- Narrative without spectacle.
 
-## Interdits
-- Cyberpunk / RGB gaming / néons agressifs.
-- Style startup SaaS, merchandising YouTube, esthétique IA générique.
-- Codes crypto/web3 ou science-fiction cliché.
-- Mascottes cartoon, kawaii ou hyper expressives.
-- Surcharge graphique et logos surdimensionnés.
+## Visual Principles
+1. **Strong negative space**: breathable compositions and clear hierarchy.
+2. **Subtle technical cues**: routes, annotations, instrumentation markers.
+3. **Premium editorial minimalism**: restraint, coherence, typography discipline.
+4. **Controlled chroma system**: deep navy, graphite, muted cyan, dark ocean green, off-white, mineral sand (plus brushed aluminum as material cue).
+
+## Forbidden Directions
+- Cyberpunk / RGB gaming / aggressive neon.
+- Startup SaaS style, YouTube merch look, generic AI aesthetics.
+- Crypto/web3 codes or cliché sci-fi tropes.
+- Cartoon, kawaii, or hyper-expressive mascots.
+- Graphic overload and oversized logos.
 
 ## Applications
-Le système doit rester cohérent sur :
-- affiches,
-- vêtements sobres,
-- mugs premium,
-- stickers minimalistes,
+The system must remain coherent for:
+- posters,
+- restrained apparel,
+- premium mugs,
+- minimal stickers,
 - podcast covers,
-- miniatures YouTube,
-- produits Etsy premium,
-- objets de bureau,
-- blog éditorial.
+- YouTube thumbnails,
+- premium Etsy products,
+- desk objects,
+- editorial blog visuals.

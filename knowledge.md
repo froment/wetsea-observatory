@@ -1,3 +1,8 @@
+# WetSea Observatory — Knowledge Base
+
+> Canonical identity: **WetSea Observatory**.
+> "WetAndSeaAI / WetSeaTech" are accepted as program labels and directive context aliases.
+
 # WETANDSEAAI / WETSEATECH — KNOWLEDGE
 
 ## IDENTITÉ

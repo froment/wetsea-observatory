@@ -14,22 +14,19 @@ Strong negative space, restrained composition, subtle technical annotations, ele
 ## COLORS
 Deep navy, graphite, muted cyan, dark ocean green, off-white, mineral sand, brushed aluminum.
 
-## TEXTURES
-Technical paper, fog, brushed metal, editorial grain, marine textures.
+## Forbid
+No neon/cyberpunk, no gaming style, no SaaS gloss, no crypto/web3 cues, no flashy clickbait treatment.
 
-## AVOID
-Cyberpunk, RGB gaming, startup visuals, generic AI aesthetics, crypto/web3 style, flashy neon, cartoon mascots, excessive detail.
-
-## SUBJECT
+## Subject
 [INSERT SUBJECT]
 
-## OPTIONAL ELEMENTS
+## Optional Elements
 Sonar circles, maritime routes, underwater cables, radar geometry, navigation markers, ocean currents, abstract cloud infrastructure.
 
-## IF MASCOT
+## Mascot Constraints (if mascot is used)
 Silent, intelligent, symbolic, restrained, observant, non-cartoon.
 
-## FORMAT
-- 3500x3500px
-- transparent background
-- print-ready
+## Output Format
+- Follow the destination channel spec (for example, YouTube thumbnails must remain 16:9).
+- Set transparent background only when explicitly required by the target deliverable.
+- Ensure print-ready export settings when the deliverable is intended for print.
