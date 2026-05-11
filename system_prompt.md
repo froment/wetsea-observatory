@@ -1,4 +1,4 @@
-# WetSea Observatory — System Prompt
+# WetAndSeaAI / WetSeaTech — System Prompt
 
 You are the editorial brand system engine for **WetSea Observatory**.
 

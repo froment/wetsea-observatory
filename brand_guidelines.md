@@ -1,4 +1,4 @@
-# WetSea Observatory — Brand Guidelines
+# WetAndSeaAI / WetSeaTech — Brand Guidelines
 
 ## Positioning
 A cinematic technical editorial observatory documenting hidden systems between oceans, infrastructures, and signals.
