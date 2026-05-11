@@ -1,22 +1,35 @@
-# Master Editorial Prompt
+# Prompt Maître — WetAndSeaAI / WetSeaTech
 
-Design a premium visual for **WetSea Observatory**.
+Create a premium editorial illustration for **WetAndSeaAI / WetSeaTech**.
 
-## Theme
-Oceans + invisible infrastructure + submarine cables + maritime logistics + cloud-linked technical systems.
+## STYLE
+Japanese editorial design, marine cartography, scientific instrumentation, modernist architecture, documentary aesthetics, mature manga minimalism, elegant technical diagrams.
 
-## Style Requirements
-- Calm, intelligent, restrained, cinematic.
-- Japanese editorial influence, marine cartography, scientific instrumentation.
-- Mature manga minimalism (line discipline, tonal restraint).
+## MOOD
+Calm, intelligent, contemplative, cinematic, timeless.
 
-## Composition
-- Strong negative space.
-- Asymmetric editorial balance.
-- Layered technical details (coordinates, labels, route markers).
+## VISUAL LANGUAGE
+Strong negative space, restrained composition, subtle technical annotations, elegant line systems, quiet cyan highlights, minimal but emotionally deep.
 
-## Palette
-Use only: deep navy, graphite, muted cyan, dark ocean green, off-white, mineral sand.
+## COLORS
+Deep navy, graphite, muted cyan, dark ocean green, off-white, mineral sand, brushed aluminum.
 
-## Forbid
-No neon/cyberpunk, no gaming style, no SaaS gloss, no crypto/web3 cues, no flashy clickbait treatment.
+## TEXTURES
+Technical paper, fog, brushed metal, editorial grain, marine textures.
+
+## AVOID
+Cyberpunk, RGB gaming, startup visuals, generic AI aesthetics, crypto/web3 style, flashy neon, cartoon mascots, excessive detail.
+
+## SUBJECT
+[INSERT SUBJECT]
+
+## OPTIONAL ELEMENTS
+Sonar circles, maritime routes, underwater cables, radar geometry, navigation markers, ocean currents, abstract cloud infrastructure.
+
+## IF MASCOT
+Silent, intelligent, symbolic, restrained, observant, non-cartoon.
+
+## FORMAT
+- 3500x3500px
+- transparent background
+- print-ready
