@@ -1,4 +1,7 @@
 # Palettes
+<!-- SOURCE CANONIQUE : design_tokens.yaml section `color` -->
+<!-- Ce fichier est conservé pour compatibilité. Ne pas modifier les valeurs hex ici — -->
+<!-- éditer uniquement dans design_tokens.yaml. -->
 
 ## Primary Palette (Mandatory)
 | Token | Hex | Use |

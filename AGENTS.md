@@ -19,16 +19,6 @@ The aesthetic must feel:
 - technically sophisticated,
 - timeless.
 
-NEVER generate:
-- cyberpunk aesthetics,
-- gaming visuals,
-- startup SaaS branding,
-- RGB neon,
-- crypto/web3 visuals,
-- childish mascots,
-- generic AI aesthetics,
-- flashy YouTube thumbnails.
-
 Visual references:
 - Japanese editorial design,
 - marine cartography,
@@ -37,14 +27,6 @@ Visual references:
 - documentary photography,
 - modernist architecture,
 - mature manga minimalism.
-
-Primary palette:
-- deep navy,
-- graphite,
-- muted cyan,
-- dark ocean green,
-- off-white,
-- mineral sand.
 
 Always prioritize:
 - negative space,
@@ -57,8 +39,21 @@ The project should feel like:
 
 > “A technical editorial observatory studying the invisible systems of the modern world.”
 
+NEVER generate:
+→ See `identity/forbidden.md` for the complete and maintained list.
+Summary: no cyberpunk, no RGB neon, no gaming, no SaaS startup, no crypto/web3, no kawaii.
+
+Primary palette:
+→ Canonical hex values in `design_tokens.yaml` section `color.primary`.
+Summary: deep navy (#0A1A2B) · graphite (#2A2F36) · muted cyan (#5E8FA3) · off-white (#F2F1EC).
+
 ## Working Protocol
-1. Read `AGENTS.md` and all markdown context files before editing.
-2. Preserve coherence across prompts, guidelines, and examples.
-3. Favor concise precision over visual excess.
-4. Keep all outputs production-ready and reusable by humans and agents.
+
+1. Read `START_HERE.md` first — it routes you to the right files for your task.
+2. Load `design_tokens.yaml` for palette, typography and spacing values.
+3. Load `identity/brand_core.md` for positioning and visual DNA.
+4. Load the relevant channel file (`channels/youtube.md`, `channels/etsy.md`, `channels/podcast.md`).
+5. Preserve coherence across prompts, guidelines, and examples.
+6. Favor concise precision over visual excess.
+7. Keep all outputs production-ready and reusable by humans and agents.
+8. In case of conflict between files: `design_tokens.yaml` > `identity/brand_core.md` > channel files > other files.

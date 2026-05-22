@@ -1,0 +1,275 @@
+# WetSea Observatory — Design Tokens
+# ============================================================
+# SOURCE DE VÉRITÉ CANONIQUE — Ne pas dupliquer ces valeurs ailleurs.
+# Tous les fichiers markdown qui citent des couleurs doivent référencer
+# ce fichier ou indiquer "Source: design_tokens.yaml".
+#
+# Dernière mise à jour : 2026-05-22
+# Maintenu par : Pascal Froment
+# ============================================================
+
+version: "2.0"
+brand: "WetSea Observatory"
+canonical_names:
+  primary: "WetSea Observatory"
+  program_labels:
+    - "WetSeaTech"
+    - "WetAndSeaAI"
+  note: "Program labels are contextual aliases only. 'WetSea Observatory' is the canonical identity in all core outputs."
+
+# ─────────────────────────────────────────
+# COULEURS
+# ─────────────────────────────────────────
+color:
+
+  # Palette principale — obligatoire pour tous les outputs
+  primary:
+    deep-navy:
+      hex: "#0A1A2B"
+      use: "Main backgrounds, ocean depth fields"
+      contrast_on_white: "14.2:1"  # AAA
+    graphite:
+      hex: "#2A2F36"
+      use: "Secondary panels, text contrast layers"
+    dark-ocean-green:
+      hex: "#1D3A3A"
+      use: "Secondary depth zones, overlays"
+    muted-cyan:
+      hex: "#5E8FA3"
+      use: "Data highlights, routes, graphic accents — NOT for small body text (3.1:1 on deep-navy = AA large only)"
+      warning: "Do not use on mineral-sand for small text. Graphic use only for body text contexts."
+    off-white:
+      hex: "#F2F1EC"
+      use: "Primary text on dark backgrounds, light cards"
+      contrast_on_deep_navy: "13.8:1"  # AAA
+    mineral-sand:
+      hex: "#C9BDA8"
+      use: "Captions, subtle accents, secondary labels"
+      contrast_on_deep_navy: "7.2:1"  # AA
+
+  # Matière / texture sémantique
+  material:
+    brushed-aluminum: "evoked through gradient #94A3B8 → #C9BDA8"
+    ocean-surface: "deep-navy with 5-12% grain overlay"
+
+  # Extension WetSeaTech — uniquement pour contenus cyber/tech
+  # Ne pas utiliser pour les outputs WetSea Observatory standard
+  extension_wetseatech:
+    near-black:
+      hex: "#07101A"
+      use: "High-density dark backgrounds (video, cyber content only)"
+    signal-blue:
+      hex: "#1E3A5F"
+      use: "Secondary panels in cyber context"
+    cold-grey:
+      hex: "#94A3B8"
+      use: "Secondary text on dark backgrounds (cyber context)"
+    note: "WetSeaTech palette is a contextual override for cyber/security content. The primary palette above remains valid and preferred."
+
+  # Valeurs interdites
+  forbidden:
+    - hex: "#00D4FF"
+      reason: "Neon cyan — violates no-neon rule. Previously present in notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md — replaced by muted-cyan #5E8FA3"
+    - rule: "No fully saturated primary colors (saturation > 80% at brightness > 70%)"
+    - rule: "No RGB gaming colors (hot pink, lime green, pure red)"
+    - rule: "No gradients with more than 2 hues unless approved for specific campaign"
+
+  # Règles de contraste WCAG
+  contrast_rules:
+    body_text_minimum: "AA (4.5:1)"
+    large_text_minimum: "AA (3:1)"
+    preferred_body_combo: "off-white #F2F1EC on deep-navy #0A1A2B = 13.8:1"
+    ui_elements: "Maintain AA minimum for all interactive elements"
+
+# ─────────────────────────────────────────
+# TYPOGRAPHIE
+# ─────────────────────────────────────────
+typography:
+
+  # Serif — autorité éditoriale long-form
+  serif:
+    recommended: "Playfair Display"
+    alternatives:
+      - "Libre Baskerville"
+      - "EB Garamond"
+      - "Cormorant Garamond"
+    fallback_system: "Georgia, 'Times New Roman', serif"
+    use_cases:
+      - "Long-form body text (blog, editorial articles)"
+      - "H1 chapter titles and headlines"
+      - "Poster primary text"
+      - "Premium product descriptions (Etsy)"
+    ai_prompt_keyword: "Playfair Display editorial serif, elegant, restrained"
+    forbidden: "Novelty serifs, slab serifs with heavy weight, condensed display serifs"
+
+  # Sans-serif — précision technique
+  sans:
+    recommended: "IBM Plex Sans"
+    alternatives:
+      - "Space Grotesk"
+      - "Inter"
+      - "Suisse Int'l"
+    fallback_system: "'Helvetica Neue', Arial, sans-serif"
+    use_cases:
+      - "UI labels and interface metadata"
+      - "YouTube thumbnail primary text"
+      - "Data annotations, route labels"
+      - "Short captions and technical tags"
+      - "Podcast cover title (3–6 words)"
+    ai_prompt_keyword: "IBM Plex Sans geometric sans, clean technical, condensed allowed"
+    forbidden: "Futuristic/gaming fonts, decorative display fonts, handwritten"
+
+  # Monospace — données techniques uniquement
+  mono:
+    recommended: "IBM Plex Mono"
+    alternatives:
+      - "Space Mono"
+      - "JetBrains Mono"
+    fallback_system: "'Courier New', monospace"
+    use_cases:
+      - "GPS coordinates and timestamps"
+      - "Technical annotations (cable IDs, depth values)"
+      - "Code references in editorial content"
+    note: "Use sparingly — monospace is a detail element, not a primary display font"
+
+  # Hiérarchie
+  hierarchy:
+    h1:
+      family: serif
+      weight: "600–700"
+      tracking: "-0.02em (tight)"
+      style: "High contrast, editorial authority"
+    h2_h3:
+      family: sans
+      weight: "500"
+      tracking: "0 to +0.01em"
+      style: "Restrained, structured"
+    body:
+      family: serif
+      weight: "400"
+      line_length: "55–75 characters"
+      line_height: "1.65"
+    captions_metadata:
+      family: "sans or mono"
+      weight: "400"
+      case: "uppercase allowed for labels"
+      size: "0.75–0.875em relative to body"
+
+  # Règles générales
+  rules:
+    - "Maximum 2 font families per composition"
+    - "Avoid novelty, futuristic, or gaming fonts"
+    - "Avoid outline-heavy effects, thick stroke fonts"
+    - "Keep line length 55–75 chars for body text"
+    - "Prefer uppercase for 3–6 word titles in thumbnails/covers"
+    - "Hierarchy: one strong title, one subtitle, max one annotation layer"
+
+# ─────────────────────────────────────────
+# ESPACEMENT & GRILLE
+# ─────────────────────────────────────────
+spacing:
+
+  # Compositions éditoriales (affiches, covers, thumbnails)
+  editorial:
+    grid_columns: 12
+    negative_space_min: "25%"
+    negative_space_target: "30–40%"
+    subject_anchor: "thirds or asymmetric balance point"
+    composition_rule: "No centered static layouts"
+
+  # Interface digitale (web, blog)
+  digital:
+    gutter_desktop: "24px"
+    margin_desktop: "48px"
+    gutter_mobile: "16px"
+    margin_mobile: "24px"
+    max_content_width: "760px (editorial body)"
+
+  # Print / produits physiques (Etsy)
+  print:
+    safe_margin: "5mm minimum"
+    bleed: "3mm standard"
+
+# ─────────────────────────────────────────
+# ATMOSPHÈRE & TEXTURES
+# ─────────────────────────────────────────
+atmosphere:
+  grain:
+    opacity: "5–12%"
+    type: "film grain, editorial paper, not digital noise"
+  depth_layers:
+    - "Base: map or infrastructure context"
+    - "Mid: technical object (cable, buoy, port crane, vessel track)"
+    - "Top: concise annotations and title"
+  lighting:
+    style: "soft cinematic, muted highlights, no hard neon glow"
+    forbidden: "RGB lens flares, overprocessed HDR, synthetic gradients"
+
+# ─────────────────────────────────────────
+# FRAMING & COMPOSITION
+# ─────────────────────────────────────────
+composition:
+  preferred:
+    - "Asymmetric editorial balance"
+    - "Diagonal and lateral lines suggesting route continuity"
+    - "Low or absent horizon to emphasize systemic abstraction"
+    - "Negative space as structural element, not empty space"
+  forbidden:
+    - "Centered static layouts"
+    - "Symmetrical hero compositions"
+    - "Cluttered frame with competing focal points"
+    - "Generic stock-photo framing"
+
+# ─────────────────────────────────────────
+# FORMATS PAR CANAL
+# ─────────────────────────────────────────
+formats:
+  youtube_thumbnail:
+    ratio: "16:9"
+    safe_text_margin: "5% from edges"
+    max_title_words: 6
+    typography_primary: sans
+    note: "Single focal subject, one short title, optional technical sub-label"
+  podcast_cover:
+    size: "3000x3000px"
+    structure: "Central emblem + peripheral data ring"
+    max_title_words: 4
+    typography_primary: sans
+  etsy_poster:
+    standard: "A3 / A2 / 18x24in"
+    typography_primary: serif
+    mockup: "Neutral only — no lifestyle props"
+  blog_editorial:
+    width: "1200px hero"
+    text_columns: 1
+    line_length: "55–75 chars"
+    typography_primary: serif
+
+# ─────────────────────────────────────────
+# MASCOTTES
+# ─────────────────────────────────────────
+mascots:
+  archetypes:
+    - name: "Beacon"
+      role: "Guidance and signal intelligence"
+    - name: "Buoy"
+      role: "Maritime grounding and monitoring"
+    - name: "Node"
+      role: "Network interconnection"
+    - name: "Courier Vessel"
+      role: "Movement across logistics routes"
+    - name: "Hybrid Infrastructure-Living"
+      examples: ["analytical octopus", "abstract manta ray", "seabird glyph", "solitary navigator"]
+      role: "Poetic bridge between biological and technical systems"
+  style:
+    - "Static or minimally expressive"
+    - "Built from geometric primitives"
+    - "Readable in monochrome, duotone, and primary palette"
+    - "Silent, intelligent, contemplative, experienced"
+    - "Print-ready at all sizes"
+  forbidden:
+    - "Childish eyes, chibi proportions, toy-like rendering"
+    - "Bright candy colors"
+    - "Highly expressive or animated poses"
+    - "Commercial mascot conventions (cartoon, winking, etc.)"
+  ai_prompt_keyword: "editorial symbolic entity, geometric, restrained, intelligent, monochrome-compatible, non-cartoon"

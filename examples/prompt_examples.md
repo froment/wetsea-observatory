@@ -53,12 +53,13 @@ Use only elements relevant to the topic:
 - cloud systems.
 
 COLOR PALETTE:
-- deep navy (#07141D),
-- graphite (#1A1F24),
-- muted cyan (#6CB7C7),
-- dark ocean green (#1F4B4A),
-- off-white (#ECE8E1),
-- mineral sand (#D7D0C5).
+<!-- Source canonique : design_tokens.yaml — ne pas modifier ces valeurs ici -->
+- deep navy (#0A1A2B),
+- graphite (#2A2F36),
+- muted cyan (#5E8FA3),
+- dark ocean green (#1D3A3A),
+- off-white (#F2F1EC),
+- mineral sand (#C9BDA8).
 
 RULE:
 90% dark neutral tones.

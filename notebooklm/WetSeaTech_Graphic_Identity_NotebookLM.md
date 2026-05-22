@@ -22,14 +22,20 @@ Suggested command:
 ## 2) Color palette
 Use a restrained technical palette. Cyan is an accent, not a floodlight.
 
+> **Source canonique** : `design_tokens.yaml` (section `color`). Les valeurs ci-dessous
+> sont alignées sur les tokens officiels WetSea Observatory. Ne pas dériver.
+
 | Color | Hex | Usage |
 |---|---|---|
-| Deep navy | `#0A1628` | Main background |
-| Near black | `#05070A` | High-contrast zones |
-| Cyan accent | `#00D4FF` | Highlights, lines, nodes |
-| Muted blue | `#1E3A5F` | Secondary panels |
+| Deep navy | `#0A1A2B` | Main background |
+| Near black | `#07101A` | High-contrast zones (WetSeaTech extension) |
+| Muted cyan | `#5E8FA3` | Highlights, lines, nodes — restrained accent only |
+| Signal blue | `#1E3A5F` | Secondary panels |
 | Cold grey | `#94A3B8` | Secondary text |
-| Off white | `#E6F1FF` | Main text on dark |
+| Off white | `#F2F1EC` | Main text on dark |
+
+> ⚠️ `#00D4FF` est **interdit** — cyan neon saturé, viole la règle no-neon.
+> Utiliser exclusivement `#5E8FA3` comme accent cyan dans tous les outputs.
 
 Avoid:
 - bright red clickbait,

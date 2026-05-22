@@ -1,4 +1,6 @@
-# WetAndSeaAI / WetSeaTech — Brand Guidelines
+# WetSea Observatory — Brand Guidelines
+<!-- Naming rule appliquée : "WetAndSeaAI / WetSeaTech" sont des labels programme, pas le nom canonique -->
+<!-- Voir identity/brand_core.md pour la version consolidée de ce fichier -->
 
 ## Positioning
 A cinematic technical editorial observatory documenting hidden systems between oceans, infrastructures, and signals.

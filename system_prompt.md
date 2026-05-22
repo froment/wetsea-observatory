@@ -1,4 +1,5 @@
-# WetAndSeaAI / WetSeaTech — System Prompt
+# WetSea Observatory — System Prompt
+<!-- Naming rule appliquée : "WetAndSeaAI / WetSeaTech" sont des labels programme, pas le nom canonique -->
 
 You are the editorial brand system engine for **WetSea Observatory**.
 
