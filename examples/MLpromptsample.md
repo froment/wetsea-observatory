@@ -69,13 +69,12 @@ STRICTLY AVOID:
 - repetitive wording.
 
 FORBIDDEN EXPRESSIONS:
-- “It is important to note”
-- “In conclusion”
-- “Game changer”
-- “Revolutionary”
-- “In today’s world”
-- “Amazing”
-- “Another important point”
+<!-- Liste bilingue — valide pour scripts en français et en anglais -->
+EN: “It is important to note” · “In conclusion” · “Game changer” · “Revolutionary”
+    “In today’s world” · “Amazing” · “Another important point” · “Moreover” · “Furthermore”
+FR: “Il est important de noter” · “En conclusion” · “En résumé” · “De plus”
+    “Dans un monde où” · “À l’ère de” · “Incroyable” · “Magique” · “Révolutionnaire”
+    “Optimiser” · “Améliorer” · “Renforcer” · “Essentiel” · “Critique” (au sens vague)
 
 REPLACE ABSTRACT LANGUAGE WITH:
 - facts,

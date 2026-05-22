@@ -1,5 +1,5 @@
 # WetSea Observatory — Audit UX & Design System
-**Audit complet · Mai 2026 · Version 1.0**
+**Audit complet · Mai 2026 · Version 2.0** — *Extension Prompting & Chaîne YouTube*
 
 > Ce document est un audit systémique du repository `wetsea-observatory` analysé en tant que **système documentaire de brand identity** utilisé comme source de vérité par des agents IA (Claude, NotebookLM, Midjourney) et par son propriétaire. L'analyse applique les principes UX à la structure, la cohérence et l'efficacité opérationnelle du système de documentation lui-même.
 
@@ -459,6 +459,311 @@ spacing:
 
 **Priorité absolue : P-01 — La palette fragmentée est le problème le plus susceptible de générer des outputs visuellement incohérents, notamment via le `#00D4FF` qui contredit la règle fondamentale "no neon".**
 
+> **Note de version** : P-01 à P-10 ont été résolus dans la version 1.0 du rapport (commit `5e46976`).
+> Les sections 9 et 10 ci-dessous constituent l'extension de l'audit aux dimensions Prompting et Chaîne YouTube.
+
 ---
 
-*Rapport généré par analyse directe du repository · Aucune hypothèse externe · Mai 2026*
+## 9. AUDIT — SYSTÈME DE PROMPTING
+
+### 9.1 État des lieux
+
+Le système de prompting repose sur 5 fichiers actifs :
+
+| Fichier | Type | Cible IA | Complétude |
+|---|---|---|---|
+| `prompts/master_prompt.md` | Prompt image général | Non spécifiée | ⚠️ Partielle |
+| `prompts/youtube_thumbnail_prompt.md` | Prompt image YouTube | Non spécifiée | ⚠️ Très succinct |
+| `prompts/mascot_prompt.md` | Prompt image mascotte | Non spécifiée | ✅ Suffisant |
+| `examples/prompt_examples.md` | Prompt image YouTube (détaillé) | Non spécifiée | ✅ Exhaustif |
+| `examples/MLpromptsample.md` | Prompt script/narration | NotebookLM | ✅ Exhaustif |
+
+### 9.2 Problèmes identifiés
+
+**P-11 · MAJEUR — `prompts/master_prompt.md` : naming rule violée + couleurs sans hex**
+
+Le titre H1 utilise encore `# Prompt Maître — WetAndSeaAI / WetSeaTech`. Le naming rule non appliquée ici malgré les corrections déjà effectuées sur les autres fichiers.
+
+Plus grave : la section `## COLORS` liste les couleurs en texte libre (`Deep navy, graphite, muted cyan...`) sans valeurs hex. Un outil d'image génératif (Midjourney, Flux, DALL-E) ne peut pas calibrer précisément sans valeurs hex explicites.
+
+**Avant :**
+```markdown
+## COLORS
+Deep navy, graphite, muted cyan, dark ocean green, off-white, mineral sand, brushed aluminum.
+```
+
+**Après recommandé :**
+```markdown
+## COLORS
+<!-- Source : design_tokens.yaml -->
+Deep navy #0A1A2B · Graphite #2A2F36 · Muted cyan #5E8FA3
+Dark ocean green #1D3A3A · Off-white #F2F1EC · Mineral sand #C9BDA8
+Rule: 90% dark neutrals, 10% muted cyan accents maximum.
+```
+
+---
+
+**P-12 · MAJEUR — Double emploi `youtube_thumbnail_prompt.md` vs `examples/prompt_examples.md`**
+
+Ces deux fichiers couvrent le même usage (prompt de miniature YouTube) avec une qualité radicalement différente :
+- `youtube_thumbnail_prompt.md` : 16 lignes, peu actionnable
+- `examples/prompt_examples.md` : ~80 lignes, complet, avec palette hex, composition, textures, interdits
+
+Le premier est redondant et inférieur au second. Un agent qui charge uniquement `youtube_thumbnail_prompt.md` dispose d'un prompt insuffisant.
+
+**Recommandation :** `prompts/youtube_thumbnail_prompt.md` doit devenir un wrapper qui pointe vers `examples/prompt_examples.md` comme prompt complet, ou les deux doivent être fusionnés avec `examples/prompt_examples.md` comme version canonique renommée `prompts/youtube_thumbnail_prompt_full.md`.
+
+---
+
+**P-13 · MAJEUR — Aucun negative prompt standardisé pour les outils IA image**
+
+Le template `docs/illustration_prompts.md` prévoit un champ `Negative prompts:` mais aucun fichier ne fournit la liste standard. Midjourney, Flux, Stable Diffusion utilisent tous ce mécanisme. Sans negative prompt WetSea Observatory standardisé, chaque prompt ad hoc réinvente la roue — et oublie inévitablement des éléments.
+
+**Negative prompt standard recommandé :**
+```
+neon, cyberpunk, gaming, RGB lighting, glitch effect, lens flare, startup branding,
+stock photography, corporate aesthetic, cartoon, kawaii, chibi, hyper saturated colors,
+crypto symbols, web3 aesthetic, futuristic fonts, clickbait, shocked face, red arrows,
+yellow circles, overprocessed HDR, sci-fi cliché, generic AI texture, centered symmetrical layout,
+SaaS gradients, blob shapes, comic style, manga panels with action lines
+```
+
+---
+
+**P-14 · MODÉRÉ — Aucune indication de l'outil IA cible dans les prompts**
+
+Aucun fichier prompt ne précise pour quelle IA il est optimisé. La syntaxe et l'efficacité d'un prompt diffèrent significativement selon l'outil :
+- **Midjourney** : utilise des paramètres (`--ar 16:9 --style raw --v 6.1`), sensible aux mots-clés courts
+- **DALL-E / GPT-4o** : prompt en prose naturelle, moins sensible aux listes
+- **Flux / Stable Diffusion** : tire profit des negative prompts
+- **Ideogram / Recraft** : optimisé pour texte dans l'image
+
+**Recommandation :** Ajouter une section `## Target Tool` dans chaque prompt avec la variante par outil, ou créer des fichiers séparés par outil pour les prompts fréquents.
+
+---
+
+**P-15 · MODÉRÉ — `docs/illustration_prompts.md` : template sans catalogue d'exemples**
+
+Le template structure correctement les champs (Subject, Geographic context, Infrastructure type, etc.) mais ne contient qu'un seul exemple. Pour une chaîne YouTube thématique, les sujets récurrents (câbles sous-marins, ports, cloud, réseaux de données) devraient avoir chacun un exemple de prompt complet pré-validé.
+
+**Recommandation :** Créer un `prompts/illustration_library.md` avec 8–12 prompts pré-validés couvrant les thèmes récurrents de la chaîne. Chaque prompt inclut le negative prompt standard et les paramètres outil cible.
+
+---
+
+**P-16 · MODÉRÉ — Anti-AI filter incomplet en français dans `examples/MLpromptsample.md`**
+
+Le fichier `examples/MLpromptsample.md` liste les expressions interdites uniquement en anglais alors que `notebooklm/directives.md` a une liste bilingue plus complète. Si la production de scripts se fait en français, le filtre anglais est insuffisant.
+
+**Recommandation :** Aligner `examples/MLpromptsample.md` avec la liste bilingue de `notebooklm/directives.md`, ou ajouter un renvoi explicite vers ce fichier.
+
+---
+
+**P-17 · MODÉRÉ — Placeholders `[INSERT SUBJECT]` sans guidance contextuelle**
+
+Les prompts `master_prompt.md` et `MLpromptsample.md` utilisent `[INSERT SUBJECT]` / `[INSERT TOPIC]` comme placeholders nus. Pour un utilisateur non expert ou un agent IA, ces placeholders sont insuffisants : il n'y a pas d'exemples de ce qu'on peut y mettre, ni de guidance sur le niveau de granularité attendu.
+
+**Avant :**
+```
+## Subject
+[INSERT SUBJECT]
+```
+
+**Après recommandé :**
+```
+## Subject
+[INSERT SUBJECT]
+<!-- Exemples :
+  - "North Atlantic submarine cable network — AEConnect-1"
+  - "Port of Rotterdam as global logistics node"
+  - "BGP routing failure cascade — real-world incident"
+  - "Hyperscaler datacenter geography — Atlantic coast"
+-->
+```
+
+---
+
+**P-18 · MINEUR — `notebooklm/directives.md` : section COLOR PALETTE sans hex**
+
+La section `## COLOR PALETTE` liste les couleurs en texte libre (`dark navy, deep black, muted metallic blue`) sans valeurs hex — et "deep black" n'est pas un token de la palette officielle. Un agent NotebookLM guidant la génération de visuels slide/storyboard ne dispose pas des valeurs précises.
+
+---
+
+### 9.3 Quick Wins Prompting
+
+| # | Action | Effort |
+|---|---|---|
+| QW-P1 | Corriger H1 + ajouter hex dans `prompts/master_prompt.md` | 15 min |
+| QW-P2 | Réduire `youtube_thumbnail_prompt.md` à un wrapper pointant vers `examples/prompt_examples.md` | 15 min |
+| QW-P3 | Créer `prompts/negative_prompt_standard.md` | 30 min |
+| QW-P4 | Ajouter exemples contextuels aux placeholders `[INSERT]` | 30 min |
+| QW-P5 | Aligner filtre anti-AI bilingue dans `examples/MLpromptsample.md` | 20 min |
+
+---
+
+## 10. AUDIT — CHAÎNE YOUTUBE
+
+### 10.1 Ce qui est défini
+
+Le système couvre bien :
+- Style visuel des miniatures (composition, palette, typo, interdits)
+- Structure narrative des scripts (Hook → 9 sections → CTA)
+- Ton éditorial (analytique, retenu, documentaire)
+- Anti-drift checklist pour cohérence visuelle série
+- Règles de montage (direct cuts, pas de transitions décoratives)
+
+### 10.2 Problèmes identifiés
+
+**P-19 · CRITIQUE — Architecture de chaîne non définie**
+
+Aucun fichier ne définit la structure globale de la chaîne YouTube : séries, playlists, catégories de contenu, hiérarchie entre formats. Sans cette architecture, chaque vidéo est produite de façon atomique sans vision d'ensemble de la chaîne. Cela impacte directement la découvrabilité, la rétention d'audience et la cohérence perçue.
+
+**Ce qui manque :**
+- Définition des séries thématiques (ex : "Câbles", "Ports", "Cloud", "Cyber")
+- Règles de naming des playlists
+- Relation entre vidéos longues et Shorts
+- Fréquence de publication cible
+
+---
+
+**P-20 · CRITIQUE — Titres de vidéos : aucune règle**
+
+Les titres YouTube sont aussi importants que les miniatures pour le CTR et la découvrabilité SEO. Le système a des règles exhaustives pour les miniatures — mais aucune règle pour les titres.
+
+**Ce qui manque :**
+- Format de titre recommandé (longueur, structure, capitalisation)
+- Règles SEO (mots-clés, position dans le titre)
+- Exemples de titres approuvés dans le style WetSea Observatory
+- Ce que le titre doit compléter par rapport à la miniature (titre ≠ répétition de la miniature)
+
+**Exemples de titres dans le style WetSea Observatory :**
+```
+Format A — Question technique : "Comment 400 câbles sous-marins font tenir l'internet mondial"
+Format B — Fait opérationnel : "Ce port traite 15 millions de conteneurs. Sans que personne ne le voie."
+Format C — Paradoxe système : "Le cloud est physique. Voici où il se trouve vraiment."
+Format D — Incident réel : "Quand un câble se coupe : ce qui se passe en 47 secondes"
+```
+
+---
+
+**P-21 · MAJEUR — Descriptions YouTube absentes du système**
+
+Les descriptions YouTube remplissent trois fonctions : SEO (mots-clés indexés), navigation (liens, timestamps) et contexte éditorial (ce que la vidéo couvre). Aucun template ni directive n'existe pour ce composant pourtant essentiel à la chaîne.
+
+**Structure de description recommandée :**
+```
+[Accroche 1–2 lignes — résumé du sujet, ton éditorial]
+
+[Corps 3–5 lignes — angle analytique développé, facts clés]
+
+— CHAPITRES —
+00:00 [Section 1]
+xx:xx [Section 2]
+...
+
+— SOURCES —
+[Liens vers sources primaires]
+
+— TAGS —
+#submarine cables #maritime infrastructure #cloud architecture [etc.]
+```
+
+---
+
+**P-22 · MAJEUR — Template de script vierge absent**
+
+`notebooklm/directives.md` définit la structure narrative (9 sections) mais il n'existe pas de template de script vierge réutilisable avec les sections pré-remplies et les contraintes de durée par section. Chaque production repart de zéro.
+
+**Structure manquante :**
+```
+## HOOK (0:00–0:15 / ~30 mots)
+[Tension initiale ou dépendance cachée]
+
+## RÉALITÉ OBSERVABLE (0:15–1:00 / ~100 mots)
+[Ce qui est visible et mesurable]
+...
+```
+
+---
+
+**P-23 · MAJEUR — Continuité visuelle entre épisodes d'une série : règles absentes**
+
+La checklist anti-drift demande "Can the frame logic be reused in a series?" mais aucun fichier ne définit concrètement les éléments récurrents d'une série (intro fixe, habillage graphique de série, couleur d'accent par série, position du logo, etc.).
+
+Pour une chaîne éditoriale premium, la continuité visuelle entre épisodes d'une même série est un signal de qualité fort — et un levier de reconnaissance d'audience.
+
+---
+
+**P-24 · MODÉRÉ — Formats vidéo non différenciés (long vs Short)**
+
+Les directives de narration sont conçues pour des formats longs (8–15 min, 9 sections narratives). Les YouTube Shorts (< 60 sec) ont des contraintes radicalement différentes : hook en 2 secondes, un seul point, rythme 2–3x plus rapide, format vertical 9:16. Aucune distinction n'est faite dans les fichiers actuels.
+
+---
+
+**P-25 · MODÉRÉ — CTA approuvés non définis**
+
+La règle est "éviter 'like and subscribe', préférer une action pratique ou une observation réflexive". Mais aucun fichier ne propose de formulations CTA concrètes validées pour WetSea Observatory.
+
+**Formulations CTA dans le style WetSea Observatory :**
+```
+"Si vous voulez aller plus loin : [lien vers source primaire]."
+"La prochaine vidéo couvre [X]. Vous pouvez vous abonner si ce territoire vous intéresse."
+"Ce cas précis est documenté dans [rapport/publication]. Lien en description."
+"Question ouverte : [formulation analytique du problème traité dans la vidéo]."
+```
+
+---
+
+**P-26 · MODÉRÉ — Langue de production non spécifiée**
+
+Les fichiers de directives sont bilingues (sections en anglais dans `directives.md`, `knowledge.md`, `WetSeaTech_Graphic_Identity_NotebookLM.md` ; sections en français dans d'autres fichiers). Aucune règle ne définit : les vidéos sont-elles en français, en anglais, ou les deux ? Cette ambiguïté affecte directement les prompts de script, les titres et descriptions, et la stratégie SEO.
+
+---
+
+**P-27 · MINEUR — Banque de sujets absente**
+
+Il n'existe pas de fichier listant les sujets validés, en cours, ou potentiels pour la chaîne. Un tel fichier permettrait de planifier la cohérence thématique sur plusieurs épisodes, d'identifier les angles encore non couverts, et de mesurer la densité de couverture par domaine (câbles, ports, cloud, cyber, etc.).
+
+---
+
+### 10.3 Quick Wins YouTube
+
+| # | Action | Effort |
+|---|---|---|
+| QW-Y1 | Créer `channels/youtube_titles.md` — règles + exemples de titres | 45 min |
+| QW-Y2 | Créer `prompts/script_template.md` — structure vierge du script à 9 sections | 30 min |
+| QW-Y3 | Ajouter règles CTA dans `channels/youtube.md` | 15 min |
+| QW-Y4 | Ajouter template de description YouTube dans `channels/youtube.md` | 20 min |
+| QW-Y5 | Clarifier la langue de production dans `identity/brand_core.md` | 15 min |
+
+---
+
+## 11. RÉSUMÉ EXÉCUTIF MIS À JOUR (v2.0)
+
+### Problèmes résolus (v1.0 — commit 5e46976)
+P-01 · P-02 · P-03 · P-04 · P-05 · P-06 · P-08 · P-09 — tous corrigés.
+
+### Problèmes actifs (v2.0 — extension Prompting + YouTube)
+
+| # | Problème | Domaine | Sévérité | Effort |
+|---|---|---|---|---|
+| P-11 | `master_prompt.md` : naming rule + couleurs sans hex | Prompting | 🟠 Majeur | 15 min |
+| P-12 | Double emploi `youtube_thumbnail_prompt.md` vs `examples/prompt_examples.md` | Prompting | 🟠 Majeur | 15 min |
+| P-13 | Negative prompt standardisé absent | Prompting | 🟠 Majeur | 30 min |
+| P-14 | Outil IA cible non spécifié dans les prompts | Prompting | 🟡 Modéré | 1h |
+| P-15 | `illustration_prompts.md` sans catalogue d'exemples | Prompting | 🟡 Modéré | 2h |
+| P-16 | Anti-AI filter incomplet en français | Prompting | 🟡 Modéré | 20 min |
+| P-17 | Placeholders `[INSERT]` sans guidance contextuelle | Prompting | 🟡 Modéré | 30 min |
+| P-18 | `notebooklm/directives.md` : couleurs sans hex | Prompting | 🟢 Mineur | 15 min |
+| P-19 | Architecture de chaîne YouTube non définie | YouTube | 🔴 Critique | 2h |
+| P-20 | Règles de titres YouTube absentes | YouTube | 🔴 Critique | 1h |
+| P-21 | Descriptions YouTube absentes | YouTube | 🟠 Majeur | 1h |
+| P-22 | Template de script vierge absent | YouTube | 🟠 Majeur | 45 min |
+| P-23 | Continuité visuelle entre épisodes non définie | YouTube | 🟠 Majeur | 1h |
+| P-24 | Formats long vs Short non différenciés | YouTube | 🟡 Modéré | 1h |
+| P-25 | CTA approuvés non définis | YouTube | 🟡 Modéré | 20 min |
+| P-26 | Langue de production non spécifiée | YouTube | 🟡 Modéré | 15 min |
+| P-27 | Banque de sujets absente | YouTube | 🟢 Mineur | Continu |
+
+---
+
+*Rapport mis à jour — v2.0 · Mai 2026 · Analyse directe du repository · Aucune hypothèse externe*

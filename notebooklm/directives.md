@@ -139,16 +139,18 @@ Maintain:
 - cinematic tension with restraint.
 
 ## COLOR PALETTE
+<!-- Source canonique : design_tokens.yaml — valeurs hex ci-dessous -->
 Prefer:
-- dark navy,
-- deep black,
-- muted metallic blue,
-- cyan highlights.
+- deep navy `#0A1A2B` (main background)
+- graphite `#2A2F36` (secondary panels)
+- muted cyan `#5E8FA3` (accent only — 10% max, never dominant)
+- off-white `#F2F1EC` (text on dark)
 
 Avoid:
 - oversaturated colors,
 - random palettes,
-- aggressive neon.
+- aggressive neon (`#00D4FF` or any cyan with saturation > 80% — forbidden),
+- deep black as sole background (prefer deep navy for editorial warmth).
 
 ## TYPOGRAPHY
 - geometric sans serif,
