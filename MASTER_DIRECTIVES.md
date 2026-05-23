@@ -1,6 +1,6 @@
 # WST Observatory — Directives Consolidées
 
-> **Auto-généré** par `scripts/build_master.sh` · Last update : 2026-05-23T13:57:23Z
+> **Auto-généré** par `scripts/build_master.sh` · Last update : 2026-05-23T14:49:49Z
 > Source : https://github.com/FROMENT/wetsea-observatory
 > **Ne pas éditer ce fichier manuellement** — il est régénéré à chaque push.
 
@@ -1057,7 +1057,10 @@ The system must remain coherent for:
 - premium Etsy products,
 - desk objects,
 - editorial blog visuals.
-
+Imahge generation 
+WST PRIORITY RULE
+- Prefer omission over invention.
+-Negative space is superior to fabricated detail.
 ---
 
 <a id="source-branding-composition_rules-md"></a>
@@ -3461,4 +3464,7 @@ Contains thumbnail direction and production constraints for WetSea Observatory v
 - Subtle contrast, no oversaturation.
 - Editorial tone over algorithmic clickbait.
 
+WST PRIORITY RULE
+Prefer omission over invention.
+Negative space is superior to fabricated detail.
 ---
