@@ -13,3 +13,7 @@
 ## Visual Discipline
 - Subtle contrast, no oversaturation.
 - Editorial tone over algorithmic clickbait.
+
+WST PRIORITY RULE
+Prefer omission over invention.
+Negative space is superior to fabricated detail.

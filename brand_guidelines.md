@@ -39,3 +39,7 @@ The system must remain coherent for:
 - premium Etsy products,
 - desk objects,
 - editorial blog visuals.
+Imahge generation 
+WST PRIORITY RULE
+- Prefer omission over invention.
+-Negative space is superior to fabricated detail.
