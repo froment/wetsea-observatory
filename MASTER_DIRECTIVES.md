@@ -1,6 +1,6 @@
 # WST Observatory — Directives Consolidées
 
-> **Auto-généré** par `scripts/build_master.sh` · Last update : 2026-05-23T14:49:49Z
+> **Auto-généré** par `scripts/build_master.sh` · Last update : 2026-06-03T06:41:02Z
 > Source : https://github.com/FROMENT/wetsea-observatory
 > **Ne pas éditer ce fichier manuellement** — il est régénéré à chaque push.
 
@@ -25,6 +25,8 @@ l'intégralité de la charte WST en une seule source indexée.
 - **[`channels/podcast.md`](#source-channels-podcast-md)** — WetSea Observatory — Canal Podcast
 - **[`channels/youtube.md`](#source-channels-youtube-md)** — WetSea Observatory — Canal YouTube
 - **[`channels/youtube_titles.md`](#source-channels-youtube_titles-md)** — WetSea Observatory — Règles de Titres YouTube
+- **[`docs/CLAC_FRAMEWORK.md`](#source-docs-clac_framework-md)** — WST Hook Framework — CLAC Method
+- **[`docs/WST_REPO_AUDIT_PROMPT.md`](#source-docs-wst_repo_audit_prompt-md)** — WST Repository Audit & Completion Prompt
 - **[`docs/context.md`](#source-docs-context-md)** — Context
 - **[`docs/editorial_direction.md`](#source-docs-editorial_direction-md)** — Editorial Direction
 - **[`docs/etsy_branding.md`](#source-docs-etsy_branding-md)** — Etsy Branding Direction
@@ -1642,6 +1644,323 @@ Suez bloqué : 6 jours qui ont révélé la fragilité de la logistique mondiale
 ❌ "Pourquoi TOUT VA S'EFFONDRER bientôt"
 ❌ "Le SECRET des datacenters révélé"
 ```
+
+---
+
+<a id="source-docs-clac_framework-md"></a>
+
+## 📄 SOURCE: `docs/CLAC_FRAMEWORK.md`
+
+# WST Hook Framework — CLAC Method
+
+## Purpose
+
+The CLAC method is a hook architecture designed to maximize attention during the first 10–20 seconds of a video, audio overview, podcast, presentation, or documentary.
+
+Its purpose is not clickbait.
+
+Its purpose is to:
+
+- establish relevance quickly,
+- create curiosity,
+- challenge assumptions,
+- open an information gap,
+- create a reason to continue watching.
+
+The viewer should immediately think:
+
+- "This concerns me."
+- "I did not expect that."
+- "I want to understand why."
+
+---
+
+## CLAC Overview
+
+CLAC stands for:
+
+**C — Context** | **L — Lean In** | **A — Arrest** | **C — Counterdirection**
+
+---
+
+## C — Context
+
+Explain immediately: what the subject is, what system is concerned, what is happening, what the discussion is about.
+
+**Duration:** 3–5 seconds.
+
+**Avoid:** greetings, long introductions, historical context, channel presentation.
+
+| Good | Bad |
+|---|---|
+| "Most companies believe AI increases productivity." | "Today we are going to discuss artificial intelligence and how it is transforming the world." |
+
+
+## L — Lean In
+
+Create relevance. The viewer must understand why the topic matters.
+
+**Possible triggers:** hidden risk, hidden cost, hidden dependency, missed opportunity, operational consequence.
+
+The audience should feel: *"This affects me."*
+
+| Good | Bad |
+|---|---|
+| "The problem is that most of those productivity gains disappear once workflows become complex." | "AI is becoming increasingly important in modern organizations." |
+
+---
+
+## A — Arrest
+
+Interrupt the expected interpretation. Introduce friction. Break a common assumption. Create a contradiction.
+
+**Possible tools:** paradox, surprising evidence, operational failure, hidden mechanism.
+
+The audience should think: *"Wait."*
+
+| Good | Bad |
+|---|---|
+| "The biggest limitation is not the model." | "However, there are also challenges." |
+
+---
+
+## C — Counterdirection
+
+Reveal a more accurate explanation. Redirect attention toward the real mechanism. Move from symptom to cause. Move from surface narrative to system reality.
+
+| Good | Bad |
+|---|---|
+| "The real constraint is context management. When context collapses, productivity collapses." | "There are many factors to consider." |
+
+---
+
+## CLAC Structure Template
+
+```
+CONTEXT          → What is happening?
+LEAN IN          → Why should the audience care?
+ARREST           → Which assumption is wrong?
+COUNTERDIRECTION → What is the deeper explanation?
+```
+
+
+---
+
+## Examples
+
+### Claude Code
+
+**C** Most developers think Claude Code is primarily a coding tool.  
+**L** That assumption influences how teams measure productivity gains.  
+**A** The largest gains often do not come from code generation.  
+**C** They come from context preservation, repository understanding and workflow orchestration.
+
+### Cybersecurity Governance
+
+**C** Many organizations continue to treat cybersecurity governance as a compliance exercise.  
+**L** That choice directly affects risk visibility and operational resilience.  
+**A** The problem is not excessive governance.  
+**C** The problem is static governance disconnected from operational reality.
+
+### AI Agents
+
+**C** AI agents are becoming increasingly capable of executing multi-step workflows.  
+**L** Organizations expect automation gains across many business functions.  
+**A** Capability is not the primary challenge.  
+**C** Reliability, orchestration and governance become the limiting factors.
+
+---
+
+## WST CLAC Rules
+
+**Always:** start with reality — move quickly — challenge assumptions — reveal mechanisms.
+
+**Prefer:** contradictions — hidden dependencies — operational consequences — measurable effects.
+
+**Avoid:** hype — marketing — emotional amplification — generic introductions.
+
+---
+
+## CLAC Quality Checklist
+
+A CLAC hook is successful if the audience immediately understands:
+
+- ✓ What is being discussed
+- ✓ Why it matters
+- ✓ Why common understanding is incomplete
+- ✓ What deeper mechanism will be revealed
+
+If one of these elements is missing, rewrite the hook.
+
+---
+
+## WST Principle
+
+A good hook does not create artificial suspense.
+
+A good hook creates a legitimate knowledge gap.
+
+The audience stays because understanding is incomplete — not because information is being withheld.
+
+---
+
+<a id="source-docs-wst_repo_audit_prompt-md"></a>
+
+## 📄 SOURCE: `docs/WST_REPO_AUDIT_PROMPT.md`
+
+# WST Repository Audit & Completion Prompt
+
+*For Claude Code / Codex / Gemini CLI*
+
+## Mission
+
+Audit the current repository and transform it into a complete, coherent and maintainable WetSeaTech NotebookLM Knowledge Base.
+
+The objective is not to generate new ideas.
+
+The objective is to:
+
+- identify missing elements,
+- remove redundancy,
+- normalize structure,
+- improve maintainability,
+- improve NotebookLM performance,
+- preserve WST editorial DNA,
+- preserve source fidelity.
+
+---
+
+## Context
+
+The repository contains a collection of: NotebookLM directives, documentary generation rules, video generation prompts, audio generation prompts, CLAC hook framework, WST visual identity, anti-AI language filters, anti-marketing rules, theme discovery systems, retention systems, learning systems, tutorial systems, think tank systems.
+
+The repository evolved organically. The purpose of this audit is to transform it into a coherent production framework.
+
+---
+
+## Phase 1 — Repository Inventory
+
+Analyze the complete repository.
+
+Generate **Existing Assets** — list directives, prompts, templates, frameworks, visual guides, editorial guides.
+
+For each asset identify: purpose — dependencies — overlap — redundancy.
+
+---
+
+## Phase 2 — Redundancy Detection
+
+Identify: duplicate concepts (repeated anti-AI filters, repeated visual identity sections, repeated retention systems, repeated quality gates).
+
+Detect: exact duplicates — semantic duplicates — conflicting versions.
+
+Generate: Keep / Merge / Remove decisions.
+
+---
+
+## Phase 3 — Knowledge Consolidation
+
+Build a canonical architecture.
+
+**Target structure:**
+
+```
+/docs
+  WST_MASTER_KNOWLEDGE_BASE.md
+  01_CORE_PRINCIPLES.md
+  02_EDITORIAL_DNA.md
+  03_VISUAL_IDENTITY.md
+  04_CLAC_FRAMEWORK.md
+  05_VIDEO_AUDIO_RULES.md
+  06_THEME_DISCOVERY_ENGINE.md
+  07_VIDEO_GENERATION_ENGINE.md
+  08_TUTORIAL_ENGINE.md
+  09_THINK_TANK_ENGINE.md
+  10_ANTI_AI_LANGUAGE.md
+  11_QUALITY_CONTROL.md
+  12_NOTEBOOKLM_QUICK_PROMPTS.md
+```
+
+Propose improvements if a better structure exists.
+
+---
+
+## Phase 4 — Gap Analysis
+
+Identify missing capabilities across: NotebookLM (video, audio, source analysis, retention, learning) — Cyber (attack-chain storytelling, governance analysis, infrastructure narratives) — AI (agents, orchestration, model limitations, governance) — Travel (documentary storytelling, field reporting, hidden realities) — Think Tank (contradiction discovery, systems thinking, causal analysis).
+
+Identify: weak areas — missing frameworks — missing prompts.
+
+---
+
+## Phase 5 — NotebookLM Optimization
+
+Review all prompts. Optimize for: NotebookLM behavior — context retrieval — source grounding — instruction following.
+
+Reduce: unnecessary verbosity — duplicated instructions — conflicting directives.
+
+Preserve: WST identity — documentary style — reality-first philosophy.
+
+---
+
+## Phase 6 — Quality of Reasoning
+
+Verify that all systems enforce:
+
+- **Evidence First** — Facts before interpretation.
+- **Epistemic Separation** — OBSERVED / INFERRED / HYPOTHETICAL / UNKNOWN.
+- **Reflection Breakables** — Challenge consensus assumptions, dominant narratives, politically convenient explanations.
+- **Systems Thinking** — Prioritize mechanisms, dependencies, tradeoffs, consequences.
+
+---
+
+## Phase 7 — WST Video System Review
+
+Verify: CLAC Framework — Retention (curiosity loops, re-hooks, progressive reveals) — Learning (mental models, transferable lessons, operational understanding) — Visual Identity (dark navy, black, metallic blue, cyan accents, infrastructure aesthetics, minimalist manga influence, analytical documentary atmosphere).
+
+---
+
+## Phase 8 — Anti-AI Audit
+
+Verify repository contains: Anti-Hype Filter — Anti-Marketing Filter — Anti-NotebookLM Filter — Anti-Repetition Filter — Reality Filter — Quality Gate.
+
+Identify weaknesses. Propose improvements.
+
+---
+
+## Phase 9 — Generate Missing Content
+
+If important components are missing, create them.
+
+Requirements: concise — reusable — maintainable — NotebookLM optimized.
+
+Avoid: unnecessary complexity — prompt bloat.
+
+---
+
+## Phase 10 — Final Deliverables
+
+Generate:
+
+1. **Repository Audit Report** — Strengths / Weaknesses / Gaps / Recommendations
+2. **Proposed Final Architecture** — Directory tree / File purposes / Dependencies
+3. **Consolidation Plan** — Merge / Remove / Rewrite / Create
+4. **Missing Documents** — Full content drafts
+5. **Final WST Score** — Score on coherence, maintainability, NotebookLM effectiveness, documentary quality, learning effectiveness, source fidelity, anti-AI robustness. With detailed justification.
+
+---
+
+## Success Criteria
+
+The final repository should function as:
+
+- a documentary production system,
+- a NotebookLM operating system,
+- a learning framework,
+- a think tank framework,
+- a tutorial generation framework,
+
+while remaining: compact — maintainable — source-grounded — operational — consistent with WetSeaTech editorial identity.
 
 ---
 
