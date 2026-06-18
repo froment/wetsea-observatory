@@ -10,12 +10,13 @@
 **Si tu es Claude, NotebookLM, Midjourney ou tout autre agent :**
 
 1. Lis `design_tokens.yaml` — source de vérité pour palette, typographie, espacements
-2. Lis `identity/brand_core.md` — positionnement, ADN visuel, ton, interdits
-3. Consulte le fichier de ton canal ci-dessous
+2. Lis `brand/core.md` — positionnement et ADN visuel
+3. Lis `brand/editorial_voice.md` pour les productions textuelles
+4. Consulte le fichier de ton canal ci-dessous
 
 **Hiérarchie de priorité en cas de conflit :**
 ```
-design_tokens.yaml  >  identity/brand_core.md  >  fichiers de canal  >  autres fichiers
+design_tokens.yaml  >  brand/core.md  >  fichiers de canal  >  autres fichiers
 ```
 
 ---
@@ -28,11 +29,13 @@ design_tokens.yaml  >  identity/brand_core.md  >  fichiers de canal  >  autres f
 | Visuel Etsy / affiche | `channels/etsy.md` + `prompts/master_prompt.md` |
 | Cover podcast | `channels/podcast.md` |
 | Script / narration vidéo | `notebooklm/directives.md` |
-| Mascotte | `identity/mascot.md` (voir `design_tokens.yaml` section mascots) |
-| Contenu cyber/WetSeaTech | `notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md` + note palette ci-dessous |
+| Mascotte | `brand/mascot.md` (voir `design_tokens.yaml` section mascots) |
+| Contenu cyber/WetSeaTech | `brand/wetseatech_program.md` |
+| Hook CLAC | `frameworks/clac.md` |
 | Prompt d'illustration général | `prompts/master_prompt.md` |
 
-> La palette de `WetSeaTech_Graphic_Identity_NotebookLM.md` a été alignée sur `design_tokens.yaml`. Utiliser `#5E8FA3` (muted-cyan) comme accent dans tous les contextes WetSeaTech.
+> Utiliser `design_tokens.yaml` comme source de palette et `brand/wetseatech_program.md`
+> comme adaptateur contextuel. `#5E8FA3` reste l'accent cyan canonique.
 
 ---
 
@@ -42,7 +45,7 @@ design_tokens.yaml  >  identity/brand_core.md  >  fichiers de canal  >  autres f
 2. **Cyan discret** — `#5E8FA3` uniquement, jamais saturé, jamais dominant
 3. **Pas de centrage statique** — compositions asymétriques, ancrage aux tiers
 4. **Maximum 2 familles de fontes** par composition
-5. **Interdit absolu** → `identity/forbidden.md`
+5. **Interdit absolu** → `brand/forbidden.md`
 
 ---
 
@@ -53,10 +56,14 @@ design_tokens.yaml          Source de vérité technique (palette, typo, spacing
 START_HERE.md               Ce fichier
 MASTER_DIRECTIVES.md        Agrégat auto-généré (read-only, ne pas éditer)
 AGENTS.md                   Règles pour agents IA
-identity/
-  brand_core.md             Positionnement, ADN, ton, applications
+brand/
+  core.md                   Positionnement, ADN et applications
+  editorial_voice.md        Ton et discipline éditoriale
   forbidden.md              Liste unique et maintenue des interdits
   mascot.md                 Spécification complète des mascottes
+  wetseatech_program.md     Adaptateur cyber/tech/security
+frameworks/
+  clac.md                   Framework canonique de hook
 channels/
   youtube.md                Règles miniatures et format vidéo
   etsy.md                   Règles produits Etsy
@@ -64,7 +71,8 @@ channels/
 prompts/                    Prompts opérationnels (IA image/texte)
 notebooklm/                 Directives NotebookLM
 references/                 Références visuelles
-assets/                     Assets approuvés (logos, textures, templates)
+assets/                     Gouvernance des assets ; approbation à documenter
+maintenance/                Migration, audits et historique opérationnel
 ```
 
 ---

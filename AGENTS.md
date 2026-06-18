@@ -40,7 +40,7 @@ The project should feel like:
 > “A technical editorial observatory studying the invisible systems of the modern world.”
 
 NEVER generate:
-→ See `identity/forbidden.md` for the complete and maintained list.
+→ See `brand/forbidden.md` for the complete and maintained list.
 Summary: no cyberpunk, no RGB neon, no gaming, no SaaS startup, no crypto/web3, no kawaii.
 
 Primary palette:
@@ -51,9 +51,11 @@ Summary: deep navy (#0A1A2B) · graphite (#2A2F36) · muted cyan (#5E8FA3) · of
 
 1. Read `START_HERE.md` first — it routes you to the right files for your task.
 2. Load `design_tokens.yaml` for palette, typography and spacing values.
-3. Load `identity/brand_core.md` for positioning and visual DNA.
-4. Load the relevant channel file (`channels/youtube.md`, `channels/etsy.md`, `channels/podcast.md`).
-5. Preserve coherence across prompts, guidelines, and examples.
-6. Favor concise precision over visual excess.
-7. Keep all outputs production-ready and reusable by humans and agents.
-8. In case of conflict between files: `design_tokens.yaml` > `identity/brand_core.md` > channel files > other files.
+3. Load `brand/core.md` for positioning and visual DNA.
+4. Load `brand/editorial_voice.md` for textual or narrative work.
+5. Load the relevant channel file (`channels/youtube.md`, `channels/etsy.md`, `channels/podcast.md`).
+6. For cyber/tech/security work, load `brand/wetseatech_program.md`.
+7. Preserve coherence across prompts, guidelines, and examples.
+8. Favor concise precision over visual excess.
+9. Keep all outputs production-ready and reusable by humans and agents.
+10. In case of conflict between files: `design_tokens.yaml` > `brand/core.md` > channel files > other files.

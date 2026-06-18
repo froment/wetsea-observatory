@@ -42,7 +42,7 @@ Summary: neon, cyberpunk, gaming, RGB, glitch, startup branding, cartoon, kawaii
 shocked face, red arrows, stock photography, corporate aesthetic, saturated gradients.
 
 ## MASCOT CONSTRAINTS (if mascot is used)
-→ See `identity/mascot.md` for full specification.
+→ See `brand/mascot.md` for full specification.
 Summary: silent, intelligent, symbolic, restrained, observant, non-cartoon, geometric primitives.
 
 ## OUTPUT FORMAT

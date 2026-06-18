@@ -1,7 +1,7 @@
 # WetSea Observatory — Canal YouTube
 <!-- Fusionne youtube/README.md + youtube/thumbnail_rules.md + prompts/youtube_thumbnail_prompt.md -->
 
-> Palette & typo → `design_tokens.yaml` | Interdits → `identity/forbidden.md`
+> Palette & typo → `design_tokens.yaml` | Interdits → `brand/forbidden.md`
 
 ---
 
@@ -80,7 +80,7 @@ Privilégier selon le sujet :
 
 ## Interdits spécifiques YouTube
 
-En complément de `identity/forbidden.md` :
+En complément de `brand/forbidden.md` :
 - Flèches rouges pointant vers des éléments
 - Visages en gros plan ou expressions réactives
 - Texte en majuscules criard sur fond blanc

@@ -1,7 +1,7 @@
 # WetSea Observatory — Canal Podcast
 <!-- Enrichi depuis docs/podcast_cover_prompts.md -->
 
-> Palette & typo → `design_tokens.yaml` | Interdits → `identity/forbidden.md`
+> Palette & typo → `design_tokens.yaml` | Interdits → `brand/forbidden.md`
 
 ---
 
@@ -87,7 +87,7 @@ Si plusieurs séries coexistent, différencier par :
 
 ## Interdits spécifiques podcast
 
-En complément de `identity/forbidden.md` :
+En complément de `brand/forbidden.md` :
 - Microphone ou casque comme sujet principal (trop générique)
 - Ondes sonores stylisées en vert/rouge (cliché podcast)
 - Photo de visage ou portrait en fond

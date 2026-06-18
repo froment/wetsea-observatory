@@ -1,12 +1,18 @@
 # NotebookLM Brand Kit
 
-This folder contains the canonical NotebookLM guidance for WetSeaTech program outputs under WetSea Observatory.
+This folder contains temporary NotebookLM adapters for WetSea Observatory.
+Canonical identity now lives under `brand/`.
 
 ## Files
-- `WetSeaTech_Graphic_Identity_NotebookLM.md`: authoritative visual continuity reference (palette, typography, framing, symbols, motion, anti-drift).
-- `directives.md`: complete editorial + analytical + audio/visual directives for script/storyboard generation.
+- `../brand/wetseatech_program.md`: canonical WetSeaTech program adapter.
+- `../frameworks/clac.md`: canonical CLAC hook framework.
+- `directives.md`: current editorial and production directives pending the later
+  NotebookLM prompt migration.
+- `WetSeaTech_Graphic_Identity_NotebookLM.md`: compatibility reference only.
 
 ## Quick usage
-1. Upload both files in each NotebookLM project.
-2. Keep them pinned as permanent sources.
-3. Use short execution commands that reference these files by name.
+1. Upload `../brand/core.md`, `../brand/editorial_voice.md` and the relevant
+   channel or program adapter.
+2. Add `../brand/wetseatech_program.md` only for cyber/tech/security work.
+3. Add `../frameworks/clac.md` when hooks are required.
+4. Add topic-specific sources and representative examples.
