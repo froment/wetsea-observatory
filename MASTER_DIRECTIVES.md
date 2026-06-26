@@ -1,6 +1,6 @@
 # WST Observatory — Directives Consolidées
 
-> **Auto-généré** par `scripts/build_master.sh` · Last update : 2026-06-04T02:25:29Z
+> **Auto-généré** par `scripts/build_master.sh` · Last update : 2026-06-18T20:11:20Z
 > Source : https://github.com/FROMENT/wetsea-observatory
 > **Ne pas éditer ce fichier manuellement** — il est régénéré à chaque push.
 
@@ -17,6 +17,13 @@ l'intégralité de la charte WST en une seule source indexée.
 - **[`START_HERE.md`](#source-start_here-md)** — WetSea Observatory — Point d'entrée
 - **[`UX_AUDIT_REPORT.md`](#source-ux_audit_report-md)** — WetSea Observatory — Audit UX & Design System
 - **[`assets/README.md`](#source-assets-readme-md)** — Assets Directory
+- **[`brand/core.md`](#source-brand-core-md)** — WetSea Observatory — Brand Core
+- **[`brand/editorial_voice.md`](#source-brand-editorial_voice-md)** — WetSea Observatory — Editorial Voice
+- **[`brand/forbidden.md`](#source-brand-forbidden-md)** — WetSea Observatory — Forbidden Aesthetics
+- **[`brand/logo_and_marks.md`](#source-brand-logo_and_marks-md)** — WetSea Observatory — Logo and Marks Governance
+- **[`brand/mascot.md`](#source-brand-mascot-md)** — WetSea Observatory — Mascot System
+- **[`brand/visual_references.md`](#source-brand-visual_references-md)** — WetSea Observatory — Visual References Matrix
+- **[`brand/wetseatech_program.md`](#source-brand-wetseatech_program-md)** — WetSeaTech — Program Adapter
 - **[`brand_guidelines.md`](#source-brand_guidelines-md)** — WetSea Observatory — Brand Guidelines
 - **[`branding/composition_rules.md`](#source-branding-composition_rules-md)** — Cinematic Composition Rules
 - **[`branding/forbidden_styles.md`](#source-branding-forbidden_styles-md)** — Forbidden Aesthetics
@@ -25,7 +32,7 @@ l'intégralité de la charte WST en une seule source indexée.
 - **[`channels/podcast.md`](#source-channels-podcast-md)** — WetSea Observatory — Canal Podcast
 - **[`channels/youtube.md`](#source-channels-youtube-md)** — WetSea Observatory — Canal YouTube
 - **[`channels/youtube_titles.md`](#source-channels-youtube_titles-md)** — WetSea Observatory — Règles de Titres YouTube
-- **[`docs/CLAC_FRAMEWORK.md`](#source-docs-clac_framework-md)** — WST Hook Framework — CLAC Method
+- **[`docs/CLAC_FRAMEWORK.md`](#source-docs-clac_framework-md)** — Compatibility Reference — CLAC Framework
 - **[`docs/WST_REPO_AUDIT_PROMPT.md`](#source-docs-wst_repo_audit_prompt-md)** — WST Repository Audit & Completion Prompt
 - **[`docs/context.md`](#source-docs-context-md)** — Context
 - **[`docs/editorial_direction.md`](#source-docs-editorial_direction-md)** — Editorial Direction
@@ -38,20 +45,22 @@ l'intégralité de la charte WST en une seule source indexée.
 - **[`docs/visual_identity.md`](#source-docs-visual_identity-md)** — Visual Identity System
 - **[`examples/MLpromptsample.md`](#source-examples-mlpromptsample-md)** — examples/MLpromptsample.md
 - **[`examples/prompt_examples.md`](#source-examples-prompt_examples-md)** — examples/prompt_examples.md
-- **[`identity/brand_core.md`](#source-identity-brand_core-md)** — WetSea Observatory — Brand Core
-- **[`identity/forbidden.md`](#source-identity-forbidden-md)** — WetSea Observatory — Forbidden Aesthetics
-- **[`identity/mascot.md`](#source-identity-mascot-md)** — WetSea Observatory — Mascot System
+- **[`frameworks/clac.md`](#source-frameworks-clac-md)** — WetSea Observatory — CLAC Hook Framework
+- **[`identity/brand_core.md`](#source-identity-brand_core-md)** — Compatibility Reference — Brand Core
+- **[`identity/forbidden.md`](#source-identity-forbidden-md)** — Compatibility Reference — Forbidden Aesthetics
+- **[`identity/mascot.md`](#source-identity-mascot-md)** — Compatibility Reference — Mascot System
 - **[`knowledge.md`](#source-knowledge-md)** — WetSea Observatory — Knowledge Base
+- **[`maintenance/migration_map.md`](#source-maintenance-migration_map-md)** — WetSea Observatory — Migration Map
 - **[`notebooklm/README.md`](#source-notebooklm-readme-md)** — NotebookLM Brand Kit
-- **[`notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md`](#source-notebooklm-wetseatech_graphic_identity_notebooklm-md)** — WetSeaTech Graphic Identity NotebookLM — Visual Continuity Master Reference
-- **[`notebooklm/clap.md`](#source-notebooklm-clap-md)** — notebooklm/clap.md
+- **[`notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md`](#source-notebooklm-wetseatech_graphic_identity_notebooklm-md)** — Compatibility Reference — WetSeaTech Visual Adapter
+- **[`notebooklm/clap.md`](#source-notebooklm-clap-md)** — Compatibility Reference — CLAC Framework
 - **[`notebooklm/directives.md`](#source-notebooklm-directives-md)** — WetSeaTech — Complete NotebookLM Master Directives
 - **[`prompts/mascot_prompt.md`](#source-prompts-mascot_prompt-md)** — Mascot System Prompt
 - **[`prompts/master_prompt.md`](#source-prompts-master_prompt-md)** — WetSea Observatory — Prompt Maître
 - **[`prompts/negative_prompt_standard.md`](#source-prompts-negative_prompt_standard-md)** — WetSea Observatory — Negative Prompt Standard
 - **[`prompts/script_template.md`](#source-prompts-script_template-md)** — WetSea Observatory — Template de Script Vidéo
 - **[`prompts/youtube_thumbnail_prompt.md`](#source-prompts-youtube_thumbnail_prompt-md)** — WetSea Observatory — YouTube Thumbnail Prompt
-- **[`references/visual_references.md`](#source-references-visual_references-md)** — Visual References Matrix
+- **[`references/visual_references.md`](#source-references-visual_references-md)** — Compatibility Reference — Visual References
 - **[`system_prompt.md`](#source-system_prompt-md)** — WetSea Observatory — System Prompt
 - **[`youtube/README.md`](#source-youtube-readme-md)** — YouTube Brand Kit
 - **[`youtube/thumbnail_rules.md`](#source-youtube-thumbnail_rules-md)** — YouTube Thumbnail Rules
@@ -104,7 +113,7 @@ The project should feel like:
 > “A technical editorial observatory studying the invisible systems of the modern world.”
 
 NEVER generate:
-→ See `identity/forbidden.md` for the complete and maintained list.
+→ See `brand/forbidden.md` for the complete and maintained list.
 Summary: no cyberpunk, no RGB neon, no gaming, no SaaS startup, no crypto/web3, no kawaii.
 
 Primary palette:
@@ -115,12 +124,14 @@ Summary: deep navy (#0A1A2B) · graphite (#2A2F36) · muted cyan (#5E8FA3) · of
 
 1. Read `START_HERE.md` first — it routes you to the right files for your task.
 2. Load `design_tokens.yaml` for palette, typography and spacing values.
-3. Load `identity/brand_core.md` for positioning and visual DNA.
-4. Load the relevant channel file (`channels/youtube.md`, `channels/etsy.md`, `channels/podcast.md`).
-5. Preserve coherence across prompts, guidelines, and examples.
-6. Favor concise precision over visual excess.
-7. Keep all outputs production-ready and reusable by humans and agents.
-8. In case of conflict between files: `design_tokens.yaml` > `identity/brand_core.md` > channel files > other files.
+3. Load `brand/core.md` for positioning and visual DNA.
+4. Load `brand/editorial_voice.md` for textual or narrative work.
+5. Load the relevant channel file (`channels/youtube.md`, `channels/etsy.md`, `channels/podcast.md`).
+6. For cyber/tech/security work, load `brand/wetseatech_program.md`.
+7. Preserve coherence across prompts, guidelines, and examples.
+8. Favor concise precision over visual excess.
+9. Keep all outputs production-ready and reusable by humans and agents.
+10. In case of conflict between files: `design_tokens.yaml` > `brand/core.md` > channel files > other files.
 
 ---
 
@@ -149,12 +160,13 @@ Editorial visual identity system exploring oceans, invisible infrastructures, ma
 **Si tu es Claude, NotebookLM, Midjourney ou tout autre agent :**
 
 1. Lis `design_tokens.yaml` — source de vérité pour palette, typographie, espacements
-2. Lis `identity/brand_core.md` — positionnement, ADN visuel, ton, interdits
-3. Consulte le fichier de ton canal ci-dessous
+2. Lis `brand/core.md` — positionnement et ADN visuel
+3. Lis `brand/editorial_voice.md` pour les productions textuelles
+4. Consulte le fichier de ton canal ci-dessous
 
 **Hiérarchie de priorité en cas de conflit :**
 ```
-design_tokens.yaml  >  identity/brand_core.md  >  fichiers de canal  >  autres fichiers
+design_tokens.yaml  >  brand/core.md  >  fichiers de canal  >  autres fichiers
 ```
 
 ---
@@ -167,11 +179,13 @@ design_tokens.yaml  >  identity/brand_core.md  >  fichiers de canal  >  autres f
 | Visuel Etsy / affiche | `channels/etsy.md` + `prompts/master_prompt.md` |
 | Cover podcast | `channels/podcast.md` |
 | Script / narration vidéo | `notebooklm/directives.md` |
-| Mascotte | `identity/mascot.md` (voir `design_tokens.yaml` section mascots) |
-| Contenu cyber/WetSeaTech | `notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md` + note palette ci-dessous |
+| Mascotte | `brand/mascot.md` (voir `design_tokens.yaml` section mascots) |
+| Contenu cyber/WetSeaTech | `brand/wetseatech_program.md` |
+| Hook CLAC | `frameworks/clac.md` |
 | Prompt d'illustration général | `prompts/master_prompt.md` |
 
-> La palette de `WetSeaTech_Graphic_Identity_NotebookLM.md` a été alignée sur `design_tokens.yaml`. Utiliser `#5E8FA3` (muted-cyan) comme accent dans tous les contextes WetSeaTech.
+> Utiliser `design_tokens.yaml` comme source de palette et `brand/wetseatech_program.md`
+> comme adaptateur contextuel. `#5E8FA3` reste l'accent cyan canonique.
 
 ---
 
@@ -181,7 +195,7 @@ design_tokens.yaml  >  identity/brand_core.md  >  fichiers de canal  >  autres f
 2. **Cyan discret** — `#5E8FA3` uniquement, jamais saturé, jamais dominant
 3. **Pas de centrage statique** — compositions asymétriques, ancrage aux tiers
 4. **Maximum 2 familles de fontes** par composition
-5. **Interdit absolu** → `identity/forbidden.md`
+5. **Interdit absolu** → `brand/forbidden.md`
 
 ---
 
@@ -192,10 +206,14 @@ design_tokens.yaml          Source de vérité technique (palette, typo, spacing
 START_HERE.md               Ce fichier
 MASTER_DIRECTIVES.md        Agrégat auto-généré (read-only, ne pas éditer)
 AGENTS.md                   Règles pour agents IA
-identity/
-  brand_core.md             Positionnement, ADN, ton, applications
+brand/
+  core.md                   Positionnement, ADN et applications
+  editorial_voice.md        Ton et discipline éditoriale
   forbidden.md              Liste unique et maintenue des interdits
   mascot.md                 Spécification complète des mascottes
+  wetseatech_program.md     Adaptateur cyber/tech/security
+frameworks/
+  clac.md                   Framework canonique de hook
 channels/
   youtube.md                Règles miniatures et format vidéo
   etsy.md                   Règles produits Etsy
@@ -203,7 +221,8 @@ channels/
 prompts/                    Prompts opérationnels (IA image/texte)
 notebooklm/                 Directives NotebookLM
 references/                 Références visuelles
-assets/                     Assets approuvés (logos, textures, templates)
+assets/                     Gouvernance des assets ; approbation à documenter
+maintenance/                Migration, audits et historique opérationnel
 ```
 
 ---
@@ -1015,13 +1034,718 @@ All assets must comply with `brand_guidelines.md` and `branding/forbidden_styles
 
 ---
 
+<a id="source-brand-core-md"></a>
+
+## 📄 SOURCE: `brand/core.md`
+
+# WetSea Observatory — Brand Core
+
+**Status:** CANONICAL
+**Scope:** Positionnement, caractère, ADN visuel et applications de la marque
+**Authority:** `design_tokens.yaml` prévaut pour les valeurs techniques
+**Dependencies:** `design_tokens.yaml`, `brand/forbidden.md`
+**Consumers:** Agents IA, éditeurs, designers et adaptateurs de canal
+
+<!-- Consolide identity/brand_core.md, brand_guidelines.md, knowledge.md,
+docs/context.md, docs/visual_identity.md et branding/composition_rules.md. -->
+
+---
+
+## Identité canonique
+
+**Nom** : WetSea Observatory
+**Labels programme** : WetSeaTech (contenus cyber/tech) · WetAndSeaAI (communications digitales)
+
+> Règle : "WetSea Observatory" est le seul nom utilisé dans les fichiers core et outputs formels.
+> Les labels programme sont des alias contextuels, jamais des substituts.
+
+---
+
+## Positionnement
+
+Un observatoire éditorial et technique qui documente les systèmes invisibles entre océans, infrastructures et signaux — avec une intelligence visuelle calme et cinématographique.
+
+**Vision :** construire une marque-observatoire éditoriale intemporelle autour des infrastructures maritimes et numériques invisibles.
+
+**Stratégie :**
+- publier des visuels de confiance avec une autorité documentaire
+- traduire les systèmes techniques en récits élégants
+- maintenir une direction artistique cohérente entre les canaux
+
+**Périmètre thématique :**
+- océans, routes maritimes, ports
+- câbles sous-marins, réseaux globaux
+- architectures cloud, systèmes techniques contemporains
+- infrastructures invisibles et dépendances opérationnelles
+
+**Ton :** explorateur technique du monde contemporain — *mesuré, technique, contemplatif, global*.
+
+---
+
+## Caractère de marque
+
+- Calme et précis.
+- Sophistiqué mais lisible.
+- Documentaire, technique, intemporel.
+- Narratif sans spectacle.
+
+**Ce que la marque doit évoquer :** calme · précision · navigation · intelligence discrète · observation · exploration moderne.
+
+---
+
+## ADN visuel
+
+Fusion subtile de :
+- cartes marines anciennes
+- design éditorial japonais
+- architecture moderniste
+- instrumentation scientifique
+- signalétique portuaire
+- aviation/naval technique
+- manga adulte minimaliste
+- documentaire contemporain
+- interfaces radar abstraites
+- schémas techniques élégants
+
+**Déclaration d'identité :** WetSea Observatory visualise les routes cachées du monde moderne à travers un langage éditorial cinématographique et calme.
+
+---
+
+## Principes visuels
+
+1. **Espace négatif fort** — compositions respirantes, hiérarchie claire, minimum 25% de vide structurel
+2. **Indices techniques subtils** — routes, annotations, marqueurs d'instrumentation avec intention
+3. **Minimalisme éditorial premium** — retenue, cohérence, discipline typographique
+4. **Système chromatique contrôlé** — deep navy, graphite, muted cyan, dark ocean green, off-white, mineral sand
+5. **Omission avant invention** — l'espace négatif est préférable au détail fabriqué
+
+**Valeurs hex canoniques → voir `design_tokens.yaml` section `color.primary`.**
+
+---
+
+## Composants d'identité visuelle
+
+- Textures cartographiques océaniques
+- Sujets infrastructure (câbles, ports, terminaux, navires)
+- Graphiques signal (vecteurs, marqueurs temporels, IDs)
+- Hiérarchie typographique retenue
+- Espace négatif comme élément structurel
+
+## Composition canonique
+
+- Utiliser une grille éditoriale de 12 colonnes pour les formats horizontaux.
+- Réserver 25–40% d'espace négatif dans chaque visuel principal.
+- Ancrer le sujet sur les tiers ou sur un point d'équilibre asymétrique.
+- Construire la profondeur en trois couches :
+  1. contexte cartographique ou infrastructurel
+  2. objet technique
+  3. titre et annotations concises
+- Privilégier les lignes latérales et diagonales suggérant la continuité d'une route.
+- Garder l'horizon bas ou absent lorsque l'abstraction du système est prioritaire.
+- Utiliser un grain atmosphérique discret, conformément à `design_tokens.yaml`.
+
+---
+
+## Références visuelles
+
+| Source | Apport |
+|---|---|
+| Design éditorial japonais | Grilles modulaires, asymétrie retenue, silence typographique |
+| Cartographie marine | Logique de contour, dégradés de profondeur, réalisme des coordonnées |
+| Instrumentation scientifique | Précision des labels, repères de mesure, hiérarchie de données |
+| Photographie documentaire | Textures réelles, subtilité atmosphérique, cadrage riche en contexte |
+| Architecture moderniste | Rythme structurel, sobriété matérielle, composition fonctionnelle |
+| Manga minimaliste adulte | Travail de ligne discipliné, économie tonale, immobilité narrative |
+
+---
+
+## Ton éditorial
+
+**Modèle narratif :**
+1. Observation (ce qui est visible)
+2. Système (comment cela fonctionne)
+3. Implication (pourquoi cela compte)
+
+**Équilibre visuel-textuel :**
+- Titres : concis et analytiques
+- Légendes : factuelles, non sensationnelles
+- Corps : arcs narratifs techniques structurés
+
+---
+
+## Applications
+
+Le système doit rester cohérent pour :
+- affiches et prints éditoriaux
+- vêtements sobres
+- mugs premium
+- stickers minimalistes
+- covers podcast
+- miniatures YouTube
+- produits Etsy premium
+- objets de bureau
+- visuels de blog éditorial
+
+---
+
+## Slogans approuvés
+
+> Reading Invisible Systems · Observe The Current · Signals Across Oceans
+> Between Sea And Signal · Quiet Systems · Technical Cartographies · Routes Beneath The Surface
+
+---
+
+## Directions interdites
+
+→ Voir `brand/forbidden.md` pour la liste complète et maintenue.
+
+**Résumé :** no cyberpunk · no neon RGB · no gaming · no SaaS startup · no crypto/web3 · no kawaii · no surcharge graphique.
+
+---
+
+<a id="source-brand-editorial_voice-md"></a>
+
+## 📄 SOURCE: `brand/editorial_voice.md`
+
+# WetSea Observatory — Editorial Voice
+
+**Status:** CANONICAL
+**Scope:** Ton, structure narrative et discipline rédactionnelle
+**Authority:** `brand/core.md` pour le positionnement de marque
+**Dependencies:** `brand/core.md`, `brand/forbidden.md`
+**Consumers:** Articles, scripts, tutoriels, podcasts et adaptations de canal
+
+---
+
+## Intention
+
+WetSea Observatory explique les systèmes invisibles avec une voix mesurée,
+technique, contemplative et globale. Le texte doit être sophistiqué mais
+lisible, documentaire sans être froid, narratif sans spectacle.
+
+Le lecteur ou l'auditeur doit sentir une intelligence d'observation : les faits
+sont établis avant l'interprétation, les mécanismes sont rendus visibles, et les
+conséquences sont décrites sans amplification artificielle.
+
+---
+
+## Modèle narratif
+
+1. **Observation** — ce qui est visible, mesurable ou directement documenté.
+2. **Système** — le mécanisme, les dépendances et les acteurs qui produisent le
+   phénomène.
+3. **Implication** — pourquoi le système compte, ce qu'il rend possible et où
+   se trouvent ses limites.
+
+Une production plus longue peut ajouter contradictions, conséquences,
+incertitudes et décisions, mais elle doit conserver cette progression.
+
+---
+
+## Hiérarchie de preuve
+
+- Séparer clairement les faits observés des interprétations.
+- Préférer les sources primaires et les exemples nommés.
+- Signaler les limites documentaires au lieu de combler les vides.
+- Utiliser, lorsque nécessaire, les labels :
+  - `[OBSERVED]`
+  - `[INFERRED]`
+  - `[HYPOTHETICAL]`
+  - `[UNKNOWN]`
+- Ne jamais transformer une hypothèse en certitude narrative.
+
+---
+
+## Écriture
+
+### Titres
+
+- Concis, analytiques et spécifiques.
+- Ils révèlent le sujet sans le dramatiser.
+- Ils évitent les promesses vagues et les superlatifs.
+
+### Légendes
+
+- Factuelles et non sensationnelles.
+- Elles nomment l'objet, le lieu, le mécanisme ou la mesure utile.
+- Elles n'expliquent pas ce que l'image montre déjà clairement.
+
+### Corps
+
+- Paragraphes structurés autour de mécanismes réels.
+- Exemples concrets avant généralisation.
+- Vocabulaire technique précis, défini lorsque le public peut ne pas le connaître.
+- Transitions fondées sur la causalité, pas sur des formules génériques.
+
+---
+
+## Rythme
+
+- Commencer par la réalité du système, pas par une présentation de soi.
+- Ouvrir une lacune de compréhension légitime plutôt qu'un suspense artificiel.
+- Alterner faits, mécanismes, exemples et conséquences.
+- Laisser respirer le texte : la densité ne doit pas devenir une accumulation.
+- Préférer une omission honnête à une précision fabriquée.
+
+Pour les hooks, utiliser `frameworks/clac.md`.
+
+---
+
+## Anti-hype et anti-marketing
+
+Éviter :
+
+- les promesses de transformation universelle
+- le langage de consultant générique
+- les superlatifs sans preuve
+- les injonctions promotionnelles
+- les conclusions artificiellement urgentes
+- les expressions de clickbait
+- les appels à l'action mécaniques
+
+Préférer :
+
+- une source à consulter
+- une question analytique
+- une conséquence opérationnelle
+- une limite encore inconnue
+- une prochaine piste d'observation
+
+---
+
+## Équilibre visuel-texte
+
+- Un titre fort.
+- Une sous-structure claire.
+- Des annotations limitées à ce qui améliore la compréhension.
+- Aucun texte ne doit compenser un concept visuel insuffisant.
+- L'espace négatif éditorial s'applique aussi à l'écriture : supprimer les
+  répétitions et les transitions sans fonction.
+
+---
+
+## Contrôle qualité
+
+Avant validation :
+
+- [ ] Le sujet précis est-il identifiable dès le début ?
+- [ ] Les faits et interprétations sont-ils distingués ?
+- [ ] Le mécanisme central est-il expliqué ?
+- [ ] Les exemples sont-ils concrets et pertinents ?
+- [ ] Les limites ou inconnues sont-elles déclarées ?
+- [ ] Le texte pourrait-il appartenir à une marque générique ? Si oui, réécrire.
+- [ ] Le ton reste-t-il calme, technique et non promotionnel ?
+
+---
+
+<a id="source-brand-forbidden-md"></a>
+
+## 📄 SOURCE: `brand/forbidden.md`
+
+# WetSea Observatory — Forbidden Aesthetics
+
+**Status:** CANONICAL
+**Scope:** Interdits visuels et contrôle anti-drift
+**Authority:** `design_tokens.yaml` prévaut pour les valeurs de couleur
+**Dependencies:** `design_tokens.yaml`, `brand/core.md`
+
+<!-- Consolide identity/forbidden.md et branding/forbidden_styles.md. -->
+
+> Pour ajouter une nouvelle interdiction : modifier **uniquement ce fichier**.
+
+---
+
+## Interdits absolus (aucune exception)
+
+### Esthétiques visuelles
+- RGB neon / néons agressifs de toute nature
+- Cyberpunk — motifs urbains, HUD gaming, neon city
+- Gaming — visuels HUD, RGB clutter, polices de jeu
+- Startup SaaS — gradients violets/roses, formes blob, typographies "techy fun"
+- Crypto / web3 — coins, chains, rockets, symboles meme
+- Science-fiction cliché — vaisseaux spatiaux, hologrammes fantaisie
+- Glitch esthétique gratuit (non justifié par le contenu)
+
+### Couleurs
+- `#00D4FF` — cyan neon saturé (anciennement présent dans WetSeaTech, supprimé)
+- Toute couleur primaire saturée utilisée comme fond dominant
+- Palettes arc-en-ciel ou multicolores aléatoires
+- Gradients avec plus de 2 teintes sans approbation spécifique
+
+### Mascottes & personnages
+- Mascottes kawaii ou chibi
+- Expressions hyper-actives ou commerciales
+- Cartoon enfantin, proportions toy-like
+- Couleurs candy vives sur personnages
+
+### Typographie
+- Polices futuristes/gaming (ex. Orbitron, Audiowide, etc.)
+- Polices décoratives cyberpunk
+- Polices manuscrites dans contexte technique
+- Outlines épais ou strokes lourds sur titres
+- Effets de glow excessifs
+
+### Photographie & visuels
+- Visages choqués / réactions expressives style clickbait
+- Flèches rouges ou cercles jaunes surlignant des éléments
+- Stock photography générique (personnes, bureaux corporate)
+- Imagery surtraitée HDR, sursharpened
+- Lens flares excessifs
+
+---
+
+## Visual Smells (à éviter fortement)
+
+- Textures IA génériques synthétiques
+- Effets de glitch non justifiés par le contenu
+- Texte en majuscules style meme (overload)
+- Composition centrée statique sans intention
+- Surcharge graphique (trop d'éléments concurrents)
+- Logos surdimensionnés occupant plus de 15% de la surface
+
+---
+
+## Anti-drift checklist (valider avant tout output)
+
+Avant de valider un visuel, vérifier :
+
+- [ ] Le visuel ressemble-t-il à WetSea Observatory sans le titre ?
+- [ ] Le cyan est-il utilisé comme signal discret, pas comme décoration ?
+- [ ] L'image est-elle technique, lisible, et non chargée ?
+- [ ] La logique de cadrage peut-elle être réutilisée dans une série ?
+- [ ] Y a-t-il un concept réel derrière l'image ?
+- [ ] A-t-on évité l'esthétique stock footage / clickbait mainstream ?
+- [ ] Aucune des couleurs interdites ci-dessus n'est utilisée ?
+
+---
+
+## Référence dans les autres fichiers
+
+Les fichiers suivants référencent cette liste au lieu de la reproduire :
+- `brand/core.md`
+- `system_prompt.md`
+- `AGENTS.md`
+- `channels/youtube.md`, `channels/etsy.md`, `channels/podcast.md`
+
+---
+
+<a id="source-brand-logo_and_marks-md"></a>
+
+## 📄 SOURCE: `brand/logo_and_marks.md`
+
+# WetSea Observatory — Logo and Marks Governance
+
+**Status:** CANONICAL GOVERNANCE
+**Scope:** Statut, preuve et usage des logos, marques, bannières, avatars et favicons
+**Authority:** `brand/core.md`, `design_tokens.yaml`
+**Consumers:** Humains et agents manipulant les assets de marque
+
+---
+
+## État actuel
+
+`[OBSERVED]` Le dépôt contient une image PNG et plusieurs vidéos, mais aucun
+fichier ne les désigne comme logo, wordmark, bannière, avatar ou favicon
+officiellement approuvé.
+
+`[UNKNOWN]` Aucun système de lockup, zone de protection, taille minimale,
+variante monochrome ou placement de logo n'est documenté.
+
+`[UNKNOWN]` Des éléments approuvés peuvent exister en dehors du dépôt.
+
+---
+
+## Règle de non-invention
+
+Tant qu'un asset n'est pas accompagné d'une provenance et d'un statut
+d'approbation explicites :
+
+- ne pas le présenter comme logo officiel
+- ne pas dériver de lockup
+- ne pas inventer de zone de protection
+- ne pas inventer de taille minimale
+- ne pas créer de favicon ou avatar dérivé
+- ne pas supprimer ou remplacer l'asset
+
+---
+
+## Approbation requise
+
+Un élément de marque ne peut devenir canonique qu'après documentation de :
+
+- chemin du fichier
+- rôle prévu
+- auteur ou outil de provenance
+- droits d'utilisation
+- formats disponibles
+- variantes approuvées
+- décision d'approbation et date
+
+Ces informations seront enregistrées dans le manifeste d'assets prévu pour un
+lot ultérieur.
+
+---
+
+## Usage provisoire
+
+Les compositions peuvent utiliser le nom typographique **WetSea Observatory**
+sans prétendre constituer un logo. Elles suivent les familles et contraintes de
+`design_tokens.yaml`.
+
+Les labels WetSeaTech et WetAndSeaAI restent des labels de programme et ne
+doivent pas être transformés automatiquement en marques autonomes.
+
+---
+
+<a id="source-brand-mascot-md"></a>
+
+## 📄 SOURCE: `brand/mascot.md`
+
+# WetSea Observatory — Mascot System
+
+**Status:** CANONICAL
+**Scope:** Rôle, archétypes, comportement et contraintes des mascottes
+**Authority:** `design_tokens.yaml` prévaut pour les tokens structurés
+**Dependencies:** `design_tokens.yaml`, `brand/core.md`, `brand/forbidden.md`
+
+<!-- Consolide identity/mascot.md, docs/mascot_systems.md,
+prompts/mascot_prompt.md et knowledge.md. -->
+
+---
+
+## Rôle des mascottes
+
+Les mascottes sont des **entités symboliques de navigation** — elles orientent l'audience à travers des récits techniques. Elles ne sont pas des personnages décoratifs ou des ambassadeurs de marque au sens commercial.
+
+Elles représentent : observation · navigation · résilience · adaptation · compréhension des systèmes invisibles.
+
+---
+
+## Archétypes
+
+| Archétype | Rôle narratif | Forme suggérée |
+|---|---|---|
+| **Beacon** | Guidance et intelligence du signal | Lanterne géométrique, faisceau directionnel |
+| **Buoy** | Ancrage maritime et surveillance | Forme flottante, lest, capteur |
+| **Node** | Interconnexion réseau | Nœud de câble, point de convergence |
+| **Courier Vessel** | Mouvement sur les routes logistiques | Silhouette de navire stylisée |
+| **Hybride Infrastructure-Vivant** | Pont poétique entre biologique et technique | Pieuvre analytique, raie manta abstraite, oiseau marin technique, navigateur solitaire |
+
+---
+
+## Qualités comportementales
+
+Les mascottes doivent sembler :
+- silencieuses
+- intelligentes
+- contemplatives
+- expérimentées
+- mobiles (mais non agitées)
+
+---
+
+## Règles de style
+
+**Obligatoire :**
+- Créées à partir de primitives géométriques — formes simples, architecturales
+- Lisibles en monochrome, duotone, et palette principale
+- Imprimables à toute taille (print-ready)
+- Expression neutre, observatrice, intelligente
+- Aucune pose dynamique ou action dramatique
+
+**Interdit :**
+- Yeux enfantins, proportions chibi, rendu toy-like
+- Couleurs candy vives ou saturées
+- Expressions hyper-actives ou commerciales
+- Cartoon, kawaii, formes organiques molles
+- Détails superflus non fonctionnels à la composition
+
+---
+
+## Compatibilité d'application
+
+Chaque mascotte doit fonctionner dans :
+- [ ] Monochrome (1 couleur)
+- [ ] Duotone (deep-navy + off-white)
+- [ ] Palette principale complète
+- [ ] Petite taille (sticker, favicon)
+- [ ] Grande taille (affiche, cover)
+
+---
+
+## Mot-clé pour prompts IA
+
+```
+"editorial symbolic entity, geometric primitives, restrained, intelligent,
+monochrome-compatible, non-cartoon, maritime technical, print-ready,
+neutral expression, silent and observant"
+```
+
+---
+
+## Sujets préférés pour hybrides infrastructure-vivant
+
+- Pieuvre analytique — câbles comme tentacules, corps = nœud de réseau
+- Raie manta abstraite — silhouette de données en migration
+- Oiseau marin technique — oiseau = vecteur de signal, plumes = lignes de route
+- Navigateur solitaire — figure humaine stylisée, non réaliste, comme symbole de trajectoire
+
+---
+
+<a id="source-brand-visual_references-md"></a>
+
+## 📄 SOURCE: `brand/visual_references.md`
+
+# WetSea Observatory — Visual References Matrix
+
+**Status:** CANONICAL REFERENCE
+**Scope:** Références de langage visuel, sans imitation littérale
+**Authority:** `design_tokens.yaml` et `brand/core.md`
+**Consumers:** Direction artistique, prompts visuels et adaptateurs de canal
+
+## Japanese Editorial Design
+- Modular grids.
+- Restrained asymmetry.
+- Typographic silence.
+
+## Marine Cartography
+- Contour logic.
+- Depth gradients.
+- Coordinate realism.
+
+## Scientific Instrumentation
+- Label precision.
+- Measurement cues.
+- Data hierarchy.
+
+## Documentary Photography
+- Real textures.
+- Atmospheric subtlety.
+- Context-rich framing.
+
+## Modernist Architecture
+- Structural rhythm.
+- Material sobriety.
+- Functional composition.
+
+## Mature Manga Minimalism
+- Disciplined linework.
+- Tonal economy.
+- Narrative stillness.
+
+---
+
+<a id="source-brand-wetseatech_program-md"></a>
+
+## 📄 SOURCE: `brand/wetseatech_program.md`
+
+# WetSeaTech — Program Adapter
+
+**Status:** ADAPTER
+**Scope:** Contenus cyber, sécurité, infrastructure numérique et systèmes IA
+**Authority:** `design_tokens.yaml`, `brand/core.md`, `brand/editorial_voice.md`,
+`brand/forbidden.md`
+**Consumers:** NotebookLM, vidéo, audio, slides et prompts visuels WetSeaTech
+
+---
+
+## Relation à la marque
+
+WetSeaTech est un label de programme de WetSea Observatory. Il ne remplace pas
+le nom canonique dans les documents core et ne constitue pas une identité
+visuelle indépendante.
+
+Le programme applique les mêmes principes de calme, précision, retenue,
+documentation et espace négatif. Son adaptation porte sur la densité technique
+et le sujet, pas sur un changement de personnalité de marque.
+
+---
+
+## Périmètre
+
+WetSeaTech couvre notamment :
+
+- cybersécurité opérationnelle
+- infrastructure internet et routage
+- systèmes cloud et datacenters
+- agents et systèmes d'intelligence artificielle
+- gouvernance technique
+- dépendances, incidents, traces et surfaces d'exposition
+
+---
+
+## Ton
+
+- Analytique, précis et légèrement plus tendu que le registre général.
+- Centré sur les mécanismes, dépendances et conséquences opérationnelles.
+- Jamais militarisé, spectaculaire ou anxiogène par défaut.
+- Jamais corporate-polished, gaming ou cyberpunk.
+
+Le modèle narratif canonique reste Observation → Système → Implication.
+
+---
+
+## Adaptation visuelle
+
+Utiliser la palette principale de `design_tokens.yaml`.
+
+L'extension `color.extension_wetseatech` peut être utilisée lorsque le contexte
+cyber ou sécurité exige une densité plus sombre :
+
+- near-black pour les zones de contraste
+- signal-blue pour les panneaux secondaires
+- cold-grey pour les informations secondaires
+
+Le muted cyan canonique reste l'unique accent cyan. Il est utilisé comme signal,
+route, trace ou nœud, jamais comme lumière dominante.
+
+---
+
+## Éléments symboliques
+
+Selon le sujet :
+
+- lignes réseau, nœuds, câbles et chemins de routage
+- traces, journaux, chronologies et états
+- couches d'infrastructure et matrices
+- arcs radar, géométrie d'onde et métaphores de profondeur
+- zones d'exposition, flux interrompus et dépendances invisibles
+
+Chaque élément doit expliquer une relation réelle. Les HUD décoratifs et la
+simulation de complexité sont interdits.
+
+---
+
+## Mouvement
+
+- Couper directement lors d'un changement d'idée.
+- Utiliser un zoom discret uniquement pour révéler un détail.
+- Alterner diagramme, situation réelle, contraste symbolique et conséquence.
+- N'animer que ce qui clarifie un mécanisme.
+
+Éviter les particules, rotations d'icônes, transitions corporate et effets
+glitch sans fonction.
+
+---
+
+## Anti-drift
+
+- [ ] Le contenu reste-t-il identifiable comme WetSea Observatory sans le label ?
+- [ ] La tension provient-elle du système réel plutôt que d'effets visuels ?
+- [ ] Le cyan fonctionne-t-il comme signal ?
+- [ ] Les couches techniques expliquent-elles quelque chose ?
+- [ ] Le visuel évite-t-il cyberpunk, gaming, stock corporate et clickbait ?
+- [ ] L'adaptation respecte-t-elle `brand/forbidden.md` ?
+
+---
+
 <a id="source-brand_guidelines-md"></a>
 
 ## 📄 SOURCE: `brand_guidelines.md`
 
 # WetSea Observatory — Brand Guidelines
 <!-- Naming rule appliquée : "WetAndSeaAI / WetSeaTech" sont des labels programme, pas le nom canonique -->
-<!-- Voir identity/brand_core.md pour la version consolidée de ce fichier -->
+<!-- LEGACY — Voir brand/core.md pour la version canonique consolidée. -->
 
 ## Positioning
 A cinematic technical editorial observatory documenting hidden systems between oceans, infrastructures, and signals.
@@ -1060,10 +1784,11 @@ The system must remain coherent for:
 - premium Etsy products,
 - desk objects,
 - editorial blog visuals.
-Imahge generation 
+Image generation
 WST PRIORITY RULE
 - Prefer omission over invention.
 -Negative space is superior to fabricated detail.
+
 ---
 
 <a id="source-branding-composition_rules-md"></a>
@@ -1145,7 +1870,7 @@ WST PRIORITY RULE
 # WetSea Observatory — Canal Etsy
 <!-- Enrichi depuis docs/etsy_branding.md -->
 
-> Palette & typo → `design_tokens.yaml` | Interdits → `identity/forbidden.md`
+> Palette & typo → `design_tokens.yaml` | Interdits → `brand/forbidden.md`
 
 ---
 
@@ -1226,7 +1951,7 @@ WST PRIORITY RULE
 
 ## Interdits spécifiques Etsy
 
-En complément de `identity/forbidden.md` :
+En complément de `brand/forbidden.md` :
 - Mockups avec personnes (mains trop visibles, corps partiels en scène)
 - Fonds de photos surchargés (bibliothèques, décors complexes)
 - Polices décoratives ou fantaisie dans les titres produit
@@ -1241,7 +1966,7 @@ En complément de `identity/forbidden.md` :
 # WetSea Observatory — Canal Podcast
 <!-- Enrichi depuis docs/podcast_cover_prompts.md -->
 
-> Palette & typo → `design_tokens.yaml` | Interdits → `identity/forbidden.md`
+> Palette & typo → `design_tokens.yaml` | Interdits → `brand/forbidden.md`
 
 ---
 
@@ -1327,7 +2052,7 @@ Si plusieurs séries coexistent, différencier par :
 
 ## Interdits spécifiques podcast
 
-En complément de `identity/forbidden.md` :
+En complément de `brand/forbidden.md` :
 - Microphone ou casque comme sujet principal (trop générique)
 - Ondes sonores stylisées en vert/rouge (cliché podcast)
 - Photo de visage ou portrait en fond
@@ -1353,7 +2078,7 @@ En complément de `identity/forbidden.md` :
 # WetSea Observatory — Canal YouTube
 <!-- Fusionne youtube/README.md + youtube/thumbnail_rules.md + prompts/youtube_thumbnail_prompt.md -->
 
-> Palette & typo → `design_tokens.yaml` | Interdits → `identity/forbidden.md`
+> Palette & typo → `design_tokens.yaml` | Interdits → `brand/forbidden.md`
 
 ---
 
@@ -1432,7 +2157,7 @@ Privilégier selon le sujet :
 
 ## Interdits spécifiques YouTube
 
-En complément de `identity/forbidden.md` :
+En complément de `brand/forbidden.md` :
 - Flèches rouges pointant vers des éléments
 - Visages en gros plan ou expressions réactives
 - Texte en majuscules criard sur fond blanc
@@ -1652,156 +2377,13 @@ Suez bloqué : 6 jours qui ont révélé la fragilité de la logistique mondiale
 
 ## 📄 SOURCE: `docs/CLAC_FRAMEWORK.md`
 
-# WST Hook Framework — CLAC Method
+# Compatibility Reference — CLAC Framework
 
-## Purpose
+**Status:** LEGACY ADAPTER
+**Canonical source:** `frameworks/clac.md`
 
-The CLAC method is a hook architecture designed to maximize attention during the first 10–20 seconds of a video, audio overview, podcast, presentation, or documentary.
-
-Its purpose is not clickbait.
-
-Its purpose is to:
-
-- establish relevance quickly,
-- create curiosity,
-- challenge assumptions,
-- open an information gap,
-- create a reason to continue watching.
-
-The viewer should immediately think:
-
-- "This concerns me."
-- "I did not expect that."
-- "I want to understand why."
-
----
-
-## CLAC Overview
-
-CLAC stands for:
-
-**C — Context** | **L — Lean In** | **A — Arrest** | **C — Counterdirection**
-
----
-
-## C — Context
-
-Explain immediately: what the subject is, what system is concerned, what is happening, what the discussion is about.
-
-**Duration:** 3–5 seconds.
-
-**Avoid:** greetings, long introductions, historical context, channel presentation.
-
-| Good | Bad |
-|---|---|
-| "Most companies believe AI increases productivity." | "Today we are going to discuss artificial intelligence and how it is transforming the world." |
-
-
-## L — Lean In
-
-Create relevance. The viewer must understand why the topic matters.
-
-**Possible triggers:** hidden risk, hidden cost, hidden dependency, missed opportunity, operational consequence.
-
-The audience should feel: *"This affects me."*
-
-| Good | Bad |
-|---|---|
-| "The problem is that most of those productivity gains disappear once workflows become complex." | "AI is becoming increasingly important in modern organizations." |
-
----
-
-## A — Arrest
-
-Interrupt the expected interpretation. Introduce friction. Break a common assumption. Create a contradiction.
-
-**Possible tools:** paradox, surprising evidence, operational failure, hidden mechanism.
-
-The audience should think: *"Wait."*
-
-| Good | Bad |
-|---|---|
-| "The biggest limitation is not the model." | "However, there are also challenges." |
-
----
-
-## C — Counterdirection
-
-Reveal a more accurate explanation. Redirect attention toward the real mechanism. Move from symptom to cause. Move from surface narrative to system reality.
-
-| Good | Bad |
-|---|---|
-| "The real constraint is context management. When context collapses, productivity collapses." | "There are many factors to consider." |
-
----
-
-## CLAC Structure Template
-
-```
-CONTEXT          → What is happening?
-LEAN IN          → Why should the audience care?
-ARREST           → Which assumption is wrong?
-COUNTERDIRECTION → What is the deeper explanation?
-```
-
-
----
-
-## Examples
-
-### Claude Code
-
-**C** Most developers think Claude Code is primarily a coding tool.  
-**L** That assumption influences how teams measure productivity gains.  
-**A** The largest gains often do not come from code generation.  
-**C** They come from context preservation, repository understanding and workflow orchestration.
-
-### Cybersecurity Governance
-
-**C** Many organizations continue to treat cybersecurity governance as a compliance exercise.  
-**L** That choice directly affects risk visibility and operational resilience.  
-**A** The problem is not excessive governance.  
-**C** The problem is static governance disconnected from operational reality.
-
-### AI Agents
-
-**C** AI agents are becoming increasingly capable of executing multi-step workflows.  
-**L** Organizations expect automation gains across many business functions.  
-**A** Capability is not the primary challenge.  
-**C** Reliability, orchestration and governance become the limiting factors.
-
----
-
-## WST CLAC Rules
-
-**Always:** start with reality — move quickly — challenge assumptions — reveal mechanisms.
-
-**Prefer:** contradictions — hidden dependencies — operational consequences — measurable effects.
-
-**Avoid:** hype — marketing — emotional amplification — generic introductions.
-
----
-
-## CLAC Quality Checklist
-
-A CLAC hook is successful if the audience immediately understands:
-
-- ✓ What is being discussed
-- ✓ Why it matters
-- ✓ Why common understanding is incomplete
-- ✓ What deeper mechanism will be revealed
-
-If one of these elements is missing, rewrite the hook.
-
----
-
-## WST Principle
-
-A good hook does not create artificial suspense.
-
-A good hook creates a legitimate knowledge gap.
-
-The audience stays because understanding is incomplete — not because information is being withheld.
+This path is retained temporarily for compatibility. Do not maintain a second
+CLAC specification here.
 
 ---
 
@@ -2096,8 +2678,9 @@ Mascots are symbolic navigation entities that orient the audience through techni
 ## Ordre de lecture obligatoire (tout agent)
 
 1. `design_tokens.yaml` — palette, typo, espacements (source de vérité)
-2. `identity/brand_core.md` — positionnement, ADN, ton
-3. Le fichier de canal ci-dessous selon le livrable visé
+2. `brand/core.md` — positionnement et ADN
+3. `brand/editorial_voice.md` — ton et narration
+4. Le fichier de canal ci-dessous selon le livrable visé
 
 ## Prompts par canal
 
@@ -2106,10 +2689,11 @@ Mascots are symbolic navigation entities that orient the audience through techni
 | YouTube thumbnail | `channels/youtube.md` | `prompts/youtube_thumbnail_prompt.md` |
 | Etsy / affiche | `channels/etsy.md` | `prompts/master_prompt.md` |
 | Podcast cover | `channels/podcast.md` | `prompts/master_prompt.md` |
-| Mascotte | `identity/mascot.md` | `prompts/mascot_prompt.md` |
-| Illustration générale | `identity/brand_core.md` | `prompts/master_prompt.md` |
+| Mascotte | `brand/mascot.md` | `prompts/mascot_prompt.md` |
+| Illustration générale | `brand/core.md` | `prompts/master_prompt.md` |
 | Script / narration | `notebooklm/directives.md` | `examples/MLpromptsample.md` |
-| Contenu WetSeaTech cyber | `notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md` | `prompts/master_prompt.md` |
+| Contenu WetSeaTech cyber | `brand/wetseatech_program.md` | `prompts/master_prompt.md` |
+| Hook CLAC | `frameworks/clac.md` | `notebooklm/directives.md` |
 
 ## Prompt de base global
 
@@ -2119,7 +2703,7 @@ où aucun prompt canal spécifique n'est disponible.
 ## Règle de priorité en cas de conflit
 
 ```
-design_tokens.yaml > identity/brand_core.md > fichier canal > system_prompt.md
+design_tokens.yaml > brand/core.md > fichier canal > system_prompt.md
 ```
 
 ---
@@ -2412,145 +2996,179 @@ cinematic documentary quality
 premium editorial thumbnail
 ---
 
+<a id="source-frameworks-clac-md"></a>
+
+## 📄 SOURCE: `frameworks/clac.md`
+
+# WetSea Observatory — CLAC Hook Framework
+
+**Status:** CANONICAL FRAMEWORK
+**Scope:** Hooks vidéo, audio, podcast, présentation et documentaire
+**Authority:** `brand/editorial_voice.md` pour le ton éditorial
+**Dependencies:** `brand/core.md`, `brand/editorial_voice.md`
+
+## Purpose
+
+The CLAC method is a hook architecture designed to maximize attention during the first 10–20 seconds of a video, audio overview, podcast, presentation, or documentary.
+
+Its purpose is not clickbait.
+
+Its purpose is to:
+
+- establish relevance quickly,
+- create curiosity,
+- challenge assumptions,
+- open an information gap,
+- create a reason to continue watching.
+
+The viewer should immediately think:
+
+- "This concerns me."
+- "I did not expect that."
+- "I want to understand why."
+
+---
+
+## CLAC Overview
+
+CLAC stands for:
+
+**C — Context** | **L — Lean In** | **A — Arrest** | **C — Counterdirection**
+
+---
+
+## C — Context
+
+Explain immediately: what the subject is, what system is concerned, what is happening, what the discussion is about.
+
+**Duration:** 3–5 seconds.
+
+**Avoid:** greetings, long introductions, historical context, channel presentation.
+
+| Good | Bad |
+|---|---|
+| "Most companies believe AI increases productivity." | "Today we are going to discuss artificial intelligence and how it is transforming the world." |
+
+
+## L — Lean In
+
+Create relevance. The viewer must understand why the topic matters.
+
+**Possible triggers:** hidden risk, hidden cost, hidden dependency, missed opportunity, operational consequence.
+
+The audience should feel: *"This affects me."*
+
+| Good | Bad |
+|---|---|
+| "The problem is that most of those productivity gains disappear once workflows become complex." | "AI is becoming increasingly important in modern organizations." |
+
+---
+
+## A — Arrest
+
+Interrupt the expected interpretation. Introduce friction. Break a common assumption. Create a contradiction.
+
+**Possible tools:** paradox, surprising evidence, operational failure, hidden mechanism.
+
+The audience should think: *"Wait."*
+
+| Good | Bad |
+|---|---|
+| "The biggest limitation is not the model." | "However, there are also challenges." |
+
+---
+
+## C — Counterdirection
+
+Reveal a more accurate explanation. Redirect attention toward the real mechanism. Move from symptom to cause. Move from surface narrative to system reality.
+
+| Good | Bad |
+|---|---|
+| "The real constraint is context management. When context collapses, productivity collapses." | "There are many factors to consider." |
+
+---
+
+## CLAC Structure Template
+
+```
+CONTEXT          → What is happening?
+LEAN IN          → Why should the audience care?
+ARREST           → Which assumption is wrong?
+COUNTERDIRECTION → What is the deeper explanation?
+```
+
+
+---
+
+## Examples
+
+### Claude Code
+
+**C** Most developers think Claude Code is primarily a coding tool.
+**L** That assumption influences how teams measure productivity gains.
+**A** The largest gains often do not come from code generation.
+**C** They come from context preservation, repository understanding and workflow orchestration.
+
+### Cybersecurity Governance
+
+**C** Many organizations continue to treat cybersecurity governance as a compliance exercise.
+**L** That choice directly affects risk visibility and operational resilience.
+**A** The problem is not excessive governance.
+**C** The problem is static governance disconnected from operational reality.
+
+### AI Agents
+
+**C** AI agents are becoming increasingly capable of executing multi-step workflows.
+**L** Organizations expect automation gains across many business functions.
+**A** Capability is not the primary challenge.
+**C** Reliability, orchestration and governance become the limiting factors.
+
+---
+
+## WetSea Observatory CLAC Rules
+
+**Always:** start with reality — move quickly — challenge assumptions — reveal mechanisms.
+
+**Prefer:** contradictions — hidden dependencies — operational consequences — measurable effects.
+
+**Avoid:** hype — marketing — emotional amplification — generic introductions.
+
+---
+
+## CLAC Quality Checklist
+
+A CLAC hook is successful if the audience immediately understands:
+
+- ✓ What is being discussed
+- ✓ Why it matters
+- ✓ Why common understanding is incomplete
+- ✓ What deeper mechanism will be revealed
+
+If one of these elements is missing, rewrite the hook.
+
+---
+
+## WetSea Observatory Principle
+
+A good hook does not create artificial suspense.
+
+A good hook creates a legitimate knowledge gap.
+
+The audience stays because understanding is incomplete — not because information is being withheld.
+
+---
+
 <a id="source-identity-brand_core-md"></a>
 
 ## 📄 SOURCE: `identity/brand_core.md`
 
-# WetSea Observatory — Brand Core
-<!-- Fichier de synthèse — fusionne brand_guidelines.md + knowledge.md + docs/visual_identity.md -->
-<!-- Source de référence pour positionnement, ADN visuel, ton et applications -->
-<!-- Pour les valeurs de palette et typographie : voir design_tokens.yaml -->
+# Compatibility Reference — Brand Core
 
----
+**Status:** LEGACY ADAPTER
+**Canonical source:** `brand/core.md`
 
-## Identité canonique
-
-**Nom** : WetSea Observatory
-**Labels programme** : WetSeaTech (contenus cyber/tech) · WetAndSeaAI (communications digitales)
-
-> Règle : "WetSea Observatory" est le seul nom utilisé dans les fichiers core et outputs formels.
-> Les labels programme sont des alias contextuels, jamais des substituts.
-
----
-
-## Positionnement
-
-Un observatoire éditorial et technique qui documente les systèmes invisibles entre océans, infrastructures et signaux — avec une intelligence visuelle calme et cinématographique.
-
-**Périmètre thématique :**
-- océans, routes maritimes, ports
-- câbles sous-marins, réseaux globaux
-- architectures cloud, systèmes techniques contemporains
-- infrastructures invisibles et dépendances opérationnelles
-
-**Ton :** explorateur technique du monde contemporain — *mesuré, technique, contemplatif, global*.
-
----
-
-## Caractère de marque
-
-- Calme et précis.
-- Sophistiqué mais lisible.
-- Documentaire, technique, intemporel.
-- Narratif sans spectacle.
-
-**Ce que la marque doit évoquer :** calme · précision · navigation · intelligence discrète · observation · exploration moderne.
-
----
-
-## ADN visuel
-
-Fusion subtile de :
-- cartes marines anciennes
-- design éditorial japonais
-- architecture moderniste
-- instrumentation scientifique
-- signalétique portuaire
-- aviation/naval technique
-- manga adulte minimaliste
-- documentaire contemporain
-- interfaces radar abstraites
-- schémas techniques élégants
-
-**Déclaration d'identité :** WetSea Observatory visualise les routes cachées du monde moderne à travers un langage éditorial cinématographique et calme.
-
----
-
-## Principes visuels
-
-1. **Espace négatif fort** — compositions respirantes, hiérarchie claire, minimum 25% de vide structurel
-2. **Indices techniques subtils** — routes, annotations, marqueurs d'instrumentation avec intention
-3. **Minimalisme éditorial premium** — retenue, cohérence, discipline typographique
-4. **Système chromatique contrôlé** — deep navy, graphite, muted cyan, dark ocean green, off-white, mineral sand
-
-**Valeurs hex canoniques → voir `design_tokens.yaml` section `color.primary`.**
-
----
-
-## Composants d'identité visuelle
-
-- Textures cartographiques océaniques
-- Sujets infrastructure (câbles, ports, terminaux, navires)
-- Graphiques signal (vecteurs, marqueurs temporels, IDs)
-- Hiérarchie typographique retenue
-- Espace négatif comme élément structurel
-
----
-
-## Références visuelles
-
-| Source | Apport |
-|---|---|
-| Design éditorial japonais | Grilles modulaires, asymétrie retenue, silence typographique |
-| Cartographie marine | Logique de contour, dégradés de profondeur, réalisme des coordonnées |
-| Instrumentation scientifique | Précision des labels, repères de mesure, hiérarchie de données |
-| Photographie documentaire | Textures réelles, subtilité atmosphérique, cadrage riche en contexte |
-| Architecture moderniste | Rythme structurel, sobriété matérielle, composition fonctionnelle |
-| Manga minimaliste adulte | Travail de ligne discipliné, économie tonale, immobilité narrative |
-
----
-
-## Ton éditorial
-
-**Modèle narratif :**
-1. Observation (ce qui est visible)
-2. Système (comment cela fonctionne)
-3. Implication (pourquoi cela compte)
-
-**Équilibre visuel-textuel :**
-- Titres : concis et analytiques
-- Légendes : factuelles, non sensationnelles
-- Corps : arcs narratifs techniques structurés
-
----
-
-## Applications
-
-Le système doit rester cohérent pour :
-- affiches et prints éditoriaux
-- vêtements sobres
-- mugs premium
-- stickers minimalistes
-- covers podcast
-- miniatures YouTube
-- produits Etsy premium
-- objets de bureau
-- visuels de blog éditorial
-
----
-
-## Slogans approuvés
-
-> Reading Invisible Systems · Observe The Current · Signals Across Oceans
-> Between Sea And Signal · Quiet Systems · Technical Cartographies · Routes Beneath The Surface
-
----
-
-## Directions interdites
-
-→ Voir `identity/forbidden.md` pour la liste complète et maintenue.
-
-**Résumé :** no cyberpunk · no neon RGB · no gaming · no SaaS startup · no crypto/web3 · no kawaii · no surcharge graphique.
+This path is retained temporarily so existing notebooks and links do not fail
+during the staged migration. Do not add or maintain brand rules here.
 
 ---
 
@@ -2558,86 +3176,13 @@ Le système doit rester cohérent pour :
 
 ## 📄 SOURCE: `identity/forbidden.md`
 
-# WetSea Observatory — Forbidden Aesthetics
-<!-- SOURCE UNIQUE — Cette liste fait autorité pour tous les fichiers du repo. -->
-<!-- Les autres fichiers doivent référencer ici plutôt que reproduire cette liste. -->
-<!-- Dernière mise à jour : 2026-05-22 -->
+# Compatibility Reference — Forbidden Aesthetics
 
-> Pour ajouter une nouvelle interdiction : modifier **uniquement ce fichier**.
+**Status:** LEGACY ADAPTER
+**Canonical source:** `brand/forbidden.md`
 
----
-
-## Interdits absolus (aucune exception)
-
-### Esthétiques visuelles
-- RGB neon / néons agressifs de toute nature
-- Cyberpunk — motifs urbains, HUD gaming, neon city
-- Gaming — visuels HUD, RGB clutter, polices de jeu
-- Startup SaaS — gradients violets/roses, formes blob, typographies "techy fun"
-- Crypto / web3 — coins, chains, rockets, symboles meme
-- Science-fiction cliché — vaisseaux spatiaux, hologrammes fantaisie
-- Glitch esthétique gratuit (non justifié par le contenu)
-
-### Couleurs
-- `#00D4FF` — cyan neon saturé (anciennement présent dans WetSeaTech, supprimé)
-- Toute couleur primaire saturée utilisée comme fond dominant
-- Palettes arc-en-ciel ou multicolores aléatoires
-- Gradients avec plus de 2 teintes sans approbation spécifique
-
-### Mascottes & personnages
-- Mascottes kawaii ou chibi
-- Expressions hyper-actives ou commerciales
-- Cartoon enfantin, proportions toy-like
-- Couleurs candy vives sur personnages
-
-### Typographie
-- Polices futuristes/gaming (ex. Orbitron, Audiowide, etc.)
-- Polices décoratives cyberpunk
-- Polices manuscrites dans contexte technique
-- Outlines épais ou strokes lourds sur titres
-- Effets de glow excessifs
-
-### Photographie & visuels
-- Visages choqués / réactions expressives style clickbait
-- Flèches rouges ou cercles jaunes surlignant des éléments
-- Stock photography générique (personnes, bureaux corporate)
-- Imagery surtraitée HDR, sursharpened
-- Lens flares excessifs
-
----
-
-## Visual Smells (à éviter fortement)
-
-- Textures IA génériques synthétiques
-- Effets de glitch non justifiés par le contenu
-- Texte en majuscules style meme (overload)
-- Composition centrée statique sans intention
-- Surcharge graphique (trop d'éléments concurrents)
-- Logos surdimensionnés occupant plus de 15% de la surface
-
----
-
-## Anti-drift checklist (valider avant tout output)
-
-Avant de valider un visuel, vérifier :
-
-- [ ] Le visuel ressemble-t-il à WetSea Observatory sans le titre ?
-- [ ] Le cyan est-il utilisé comme signal discret, pas comme décoration ?
-- [ ] L'image est-elle technique, lisible, et non chargée ?
-- [ ] La logique de cadrage peut-elle être réutilisée dans une série ?
-- [ ] Y a-t-il un concept réel derrière l'image ?
-- [ ] A-t-on évité l'esthétique stock footage / clickbait mainstream ?
-- [ ] Aucune des couleurs interdites ci-dessus n'est utilisée ?
-
----
-
-## Référence dans les autres fichiers
-
-Les fichiers suivants référencent cette liste au lieu de la reproduire :
-- `identity/brand_core.md`
-- `system_prompt.md`
-- `AGENTS.md`
-- `channels/youtube.md`, `channels/etsy.md`, `channels/podcast.md`
+This path is retained temporarily so existing notebooks and links do not fail
+during the staged migration. Do not add or maintain prohibitions here.
 
 ---
 
@@ -2645,88 +3190,13 @@ Les fichiers suivants référencent cette liste au lieu de la reproduire :
 
 ## 📄 SOURCE: `identity/mascot.md`
 
-# WetSea Observatory — Mascot System
-<!-- SOURCE UNIQUE — Fusionne docs/mascot_systems.md + prompts/mascot_prompt.md + knowledge.md -->
-<!-- Les trois fichiers source font référence à ce fichier. -->
+# Compatibility Reference — Mascot System
 
----
+**Status:** LEGACY ADAPTER
+**Canonical source:** `brand/mascot.md`
 
-## Rôle des mascottes
-
-Les mascottes sont des **entités symboliques de navigation** — elles orientent l'audience à travers des récits techniques. Elles ne sont pas des personnages décoratifs ou des ambassadeurs de marque au sens commercial.
-
-Elles représentent : observation · navigation · résilience · adaptation · compréhension des systèmes invisibles.
-
----
-
-## Archétypes
-
-| Archétype | Rôle narratif | Forme suggérée |
-|---|---|---|
-| **Beacon** | Guidance et intelligence du signal | Lanterne géométrique, faisceau directionnel |
-| **Buoy** | Ancrage maritime et surveillance | Forme flottante, lest, capteur |
-| **Node** | Interconnexion réseau | Nœud de câble, point de convergence |
-| **Courier Vessel** | Mouvement sur les routes logistiques | Silhouette de navire stylisée |
-| **Hybride Infrastructure-Vivant** | Pont poétique entre biologique et technique | Pieuvre analytique, raie manta abstraite, oiseau marin technique, navigateur solitaire |
-
----
-
-## Qualités comportementales
-
-Les mascottes doivent sembler :
-- silencieuses
-- intelligentes
-- contemplatives
-- expérimentées
-- mobiles (mais non agitées)
-
----
-
-## Règles de style
-
-**Obligatoire :**
-- Créées à partir de primitives géométriques — formes simples, architecturales
-- Lisibles en monochrome, duotone, et palette principale
-- Imprimables à toute taille (print-ready)
-- Expression neutre, observatrice, intelligente
-- Aucune pose dynamique ou action dramatique
-
-**Interdit :**
-- Yeux enfantins, proportions chibi, rendu toy-like
-- Couleurs candy vives ou saturées
-- Expressions hyper-actives ou commerciales
-- Cartoon, kawaii, formes organiques molles
-- Détails superflus non fonctionnels à la composition
-
----
-
-## Compatibilité d'application
-
-Chaque mascotte doit fonctionner dans :
-- [ ] Monochrome (1 couleur)
-- [ ] Duotone (deep-navy + off-white)
-- [ ] Palette principale complète
-- [ ] Petite taille (sticker, favicon)
-- [ ] Grande taille (affiche, cover)
-
----
-
-## Mot-clé pour prompts IA
-
-```
-"editorial symbolic entity, geometric primitives, restrained, intelligent,
-monochrome-compatible, non-cartoon, maritime technical, print-ready,
-neutral expression, silent and observant"
-```
-
----
-
-## Sujets préférés pour hybrides infrastructure-vivant
-
-- Pieuvre analytique — câbles comme tentacules, corps = nœud de réseau
-- Raie manta abstraite — silhouette de données en migration
-- Oiseau marin technique — oiseau = vecteur de signal, plumes = lignes de route
-- Navigateur solitaire — figure humaine stylisée, non réaliste, comme symbole de trajectoire
+This path is retained temporarily so existing notebooks and links do not fail
+during the staged migration. Do not add or maintain mascot rules here.
 
 ---
 
@@ -2899,22 +3369,136 @@ Exemples :
 
 ---
 
+<a id="source-maintenance-migration_map-md"></a>
+
+## 📄 SOURCE: `maintenance/migration_map.md`
+
+# WetSea Observatory — Migration Map
+
+**Status:** MAINTENANCE
+**Scope:** Lots A et B — structure, identité canonique, adaptateur WetSeaTech et CLAC
+**Baseline commit:** `a454b4b3d78f5d1d45cf6957c89fd49574959e59`
+**Deletion policy:** aucun fichier legacy ni asset binaire supprimé dans ces lots
+
+---
+
+## Principes
+
+1. `design_tokens.yaml` reste la source de vérité technique.
+2. Les documents sous `brand/` deviennent les sources canoniques d'identité.
+3. Les anciens chemins canoniques restent temporairement sous forme de références
+   de compatibilité.
+4. Les fichiers legacy ne sont pas supprimés avant une validation de contenu.
+5. Les assets binaires ne sont ni déplacés, ni renommés, ni modifiés.
+6. Les audits et fichiers legacy ne doivent pas être considérés comme canoniques.
+
+---
+
+## Migrations réalisées — Lot A
+
+| Source | Cible | Traitement |
+|---|---|---|
+| `identity/brand_core.md` | `brand/core.md` | Déplacé et enrichi avec le contenu unique des résumés legacy |
+| `identity/forbidden.md` | `brand/forbidden.md` | Déplacé ; reste la liste normative unique |
+| `identity/mascot.md` | `brand/mascot.md` | Déplacé ; conserve les archétypes et contraintes |
+| `references/visual_references.md` | `brand/visual_references.md` | Déplacé et classé comme référence canonique |
+| `docs/editorial_direction.md` | `brand/editorial_voice.md` | Modèle narratif consolidé dans un nouveau document canonique |
+| `docs/context.md` | `brand/core.md` | Vision et stratégie intégrées |
+| `docs/visual_identity.md` | `brand/core.md` | Déclaration et composants déjà couverts, vérifiés |
+| `branding/composition_rules.md` | `brand/core.md` | Grille, profondeur et cadrage intégrés |
+| `brand_guidelines.md` | `brand/core.md` | Positionnement et priorité omission/invention intégrés |
+| `knowledge.md` | `brand/core.md`, `brand/editorial_voice.md`, `brand/mascot.md` | Contenu unique réparti ; fichier conservé en legacy |
+
+---
+
+## Migrations réalisées — Lot B
+
+| Source | Cible | Traitement |
+|---|---|---|
+| `notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md` | `brand/wetseatech_program.md` | Règles de programme consolidées sans créer une marque concurrente |
+| `docs/CLAC_FRAMEWORK.md` | `frameworks/clac.md` | Déplacé et déclaré framework canonique |
+| `notebooklm/clap.md` | `frameworks/clac.md` | Vérifié comme duplication sémantique ; ancien chemin converti en référence de compatibilité |
+
+---
+
+## Références de compatibilité
+
+Les chemins suivants sont conservés temporairement et ne doivent plus recevoir
+de règles :
+
+- `identity/brand_core.md`
+- `identity/forbidden.md`
+- `identity/mascot.md`
+- `references/visual_references.md`
+- `docs/CLAC_FRAMEWORK.md`
+- `notebooklm/clap.md`
+- `notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md`
+
+---
+
+## Fichiers legacy conservés pour les lots suivants
+
+- `brand_guidelines.md`
+- `knowledge.md`
+- `docs/context.md`
+- `docs/editorial_direction.md`
+- `docs/visual_identity.md`
+- `docs/mascot_systems.md`
+- `branding/composition_rules.md`
+- `branding/forbidden_styles.md`
+- `branding/palettes.md`
+- `docs/typography.md`
+- fichiers legacy de canal et de prompts
+
+Leur suppression éventuelle nécessite une nouvelle validation après migration
+des canaux, prompts, templates et du pipeline NotebookLM.
+
+---
+
+## Assets binaires
+
+Les six fichiers PNG/MP4 existants restent inchangés. Leur rôle, provenance,
+licence et statut d'approbation demeurent `[UNKNOWN]`.
+
+---
+
+## Étapes non incluses
+
+- manifeste NotebookLM
+- nouveau build généré
+- prompts article, tutoriel, learning notes et think tank
+- canaux website, WordPress et LinkedIn
+- suppression des doublons legacy
+- déplacement ou classification des assets binaires
+
+Le fichier legacy `MASTER_DIRECTIVES.md` est seulement régénéré avec le script
+existant afin de rester cohérent avec les sources Markdown de ce lot. Son
+remplacement par un pack sélectif piloté par manifeste reste hors périmètre.
+
+---
+
 <a id="source-notebooklm-readme-md"></a>
 
 ## 📄 SOURCE: `notebooklm/README.md`
 
 # NotebookLM Brand Kit
 
-This folder contains the canonical NotebookLM guidance for WetSeaTech program outputs under WetSea Observatory.
+This folder contains temporary NotebookLM adapters for WetSea Observatory.
+Canonical identity now lives under `brand/`.
 
 ## Files
-- `WetSeaTech_Graphic_Identity_NotebookLM.md`: authoritative visual continuity reference (palette, typography, framing, symbols, motion, anti-drift).
-- `directives.md`: complete editorial + analytical + audio/visual directives for script/storyboard generation.
+- `../brand/wetseatech_program.md`: canonical WetSeaTech program adapter.
+- `../frameworks/clac.md`: canonical CLAC hook framework.
+- `directives.md`: current editorial and production directives pending the later
+  NotebookLM prompt migration.
+- `WetSeaTech_Graphic_Identity_NotebookLM.md`: compatibility reference only.
 
 ## Quick usage
-1. Upload both files in each NotebookLM project.
-2. Keep them pinned as permanent sources.
-3. Use short execution commands that reference these files by name.
+1. Upload `../brand/core.md`, `../brand/editorial_voice.md` and the relevant
+   channel or program adapter.
+2. Add `../brand/wetseatech_program.md` only for cyber/tech/security work.
+3. Add `../frameworks/clac.md` when hooks are required.
+4. Add topic-specific sources and representative examples.
 
 ---
 
@@ -2922,126 +3506,21 @@ This folder contains the canonical NotebookLM guidance for WetSeaTech program ou
 
 ## 📄 SOURCE: `notebooklm/WetSeaTech_Graphic_Identity_NotebookLM.md`
 
-# WetSeaTech Graphic Identity NotebookLM — Visual Continuity Master Reference
+# Compatibility Reference — WetSeaTech Visual Adapter
 
-## Purpose
-Use this file as the authoritative visual reference in NotebookLM to keep a stable graphic identity across videos, slides, thumbnails, and visual prompts.
+**Status:** LEGACY ADAPTER
+**Canonical source:** `brand/wetseatech_program.md`
 
-> Brand coherence note: WetSeaTech is treated as a program label inside the canonical WetSea Observatory identity system.
+The WetSeaTech visual rules now live in the canonical program adapter and inherit
+from:
 
-## How to use this file in NotebookLM
-1. Upload this file as a source and keep it in every Notebook used for WetSeaTech video/slide generation.
-2. Use a short execution prompt and reference this file by name instead of repeating all graphic rules.
-3. Ask NotebookLM to map each section to visuals that respect this file.
+1. `design_tokens.yaml`
+2. `brand/core.md`
+3. `brand/editorial_voice.md`
+4. `brand/forbidden.md`
 
-Suggested command:
-"Use `WetSeaTech_Graphic_Identity_NotebookLM` as the authoritative visual reference. Maintain continuity across scenes, slides and thumbnails. Follow palette, typography, framing logic and symbolic elements from this file."
-
-## 1) Core visual identity
-- **Positioning**: analytical tech channel, cyber infrastructure, AI systems, field-level operational thinking.
-- **Visual mood**: dark, precise, technical, slightly tense, not corporate-polished.
-- **Differentiation**: documentary cyber-lab atmosphere, not loud YouTube tech entertainment.
-- **Metaphor**: depth, flows, navigation, radar, undersea cables, infrastructure layers.
-
-## 2) Color palette
-Use a restrained technical palette. Cyan is an accent, not a floodlight.
-
-> **Source canonique** : `design_tokens.yaml` (section `color`). Les valeurs ci-dessous
-> sont alignées sur les tokens officiels WetSea Observatory. Ne pas dériver.
-
-| Color | Hex | Usage |
-|---|---|---|
-| Deep navy | `#0A1A2B` | Main background |
-| Near black | `#07101A` | High-contrast zones (WetSeaTech extension) |
-| Muted cyan | `#5E8FA3` | Highlights, lines, nodes — restrained accent only |
-| Signal blue | `#1E3A5F` | Secondary panels |
-| Cold grey | `#94A3B8` | Secondary text |
-| Off white | `#F2F1EC` | Main text on dark |
-
-> ⚠️ `#00D4FF` est **interdit** — cyan neon saturé, viole la règle no-neon.
-> Utiliser exclusivement `#5E8FA3` comme accent cyan dans tous les outputs.
-
-Avoid:
-- bright red clickbait,
-- saturated yellow,
-- rainbow palettes,
-- excessive neon gradients,
-- random color schemes between videos.
-
-## 3) Typography rules
-- Use geometric sans-serif or condensed sans-serif fonts: clean, technical, readable on mobile.
-- Prefer short titles in uppercase or small caps; 3 to 6 words ideal.
-- Avoid gaming fonts, decorative cyberpunk fonts, handwritten fonts, excessive glow or thick outlines.
-- Hierarchy: one strong title, one short subtitle, max one small annotation layer.
-
-## 4) Framing and composition
-- Prefer asymmetrical framing with depth: foreground signal, background infrastructure.
-- Use negative space deliberately.
-- Favor layered systems: grid, network, map, dashboard, diagram, flow.
-- Avoid centered static layouts, generic stock people, reaction faces, red arrows, yellow circles.
-
-## 5) Recurring symbolic elements
-- **Infrastructure**: network lines, nodes, cables, layers, routing paths.
-- **Sea metaphor**: wave geometry, depth gradients, sonar/radar arcs, currents.
-- **Cyber signal**: logs, traces, attack paths, lock states, exposure zones.
-- **Analysis**: split screens, matrices, timelines, before/after contrast.
-- **Subtle absurdity**: simple object indicating serious failure (giant lock, empty asset box, dead checklist).
-
-## 6) Motion and editing rules
-- Use hard cuts for new ideas; avoid decorative fades.
-- Use subtle zoom only to reveal detail.
-- Alternate: diagram → real situation → symbolic contrast → operational consequence.
-- Avoid over-animation, spinning icons, random particle effects, generic corporate transitions.
-- Every movement must clarify an idea or expose a contrast.
-
-## 7) NotebookLM execution block
-### VISUAL CONTINUITY DIRECTIVE
-Use `WetSeaTech_Graphic_Identity_NotebookLM` as the authoritative style source.
-
-Apply:
-- dark navy / black base,
-- cyan technical accents,
-- geometric readable typography,
-- asymmetric framing,
-- layered infrastructure visuals,
-- radar / wave / network metaphors,
-- no random stock footage,
-- no clickbait thumbnail logic,
-- no over-animated visuals.
-
-For each video/slide section, provide:
-1. visual concept,
-2. composition,
-3. color usage,
-4. motion instruction,
-5. forbidden visual drift to avoid.
-
-## 8) Visual prompt templates
-1. "Abstract cyber architecture blueprint, layered infrastructure systems, cyan network lines on deep navy/black gradients, subtle wave geometry, technical documentary mood, minimalist, high contrast, premium channel identity, no stock people, no clickbait, no excessive neon."
-2. "Minimal cyber documentary frame, dark navy background, cyan data traces, asymmetric composition, radar arcs and infrastructure grid, restrained manga-inspired framing, analytical atmosphere, clean geometric typography zone, no decorative clutter."
-3. "Operational cybersecurity incident visualization, invisible asset shown as an empty outlined box connected to network lines, cyan highlights, black/navy palette, subtle absurdity, serious technical tone, no cartoon exaggeration, no corporate stock aesthetic."
-
-## 9) Thumbnail rules
-- One idea only.
-- If text is used, max 5 words.
-- Strong contrast, dark base, cyan signal, one symbolic object.
-- Prefer tension over noise (exposed node, broken flow, hidden asset, split architecture).
-- Keep recurring anchors: grid, wave/radar, cyan edge line, technical panel.
-- Avoid reaction-face thumbnails unless treated as documentary evidence.
-
-## 10) Anti-drift checklist
-- Does the visual still look like WetSeaTech without title text?
-- Is cyan used as signal rather than decoration?
-- Is the image technical/readable and not busy?
-- Can the frame logic be reused in a series?
-- Is there a real concept behind the image?
-- Did we avoid stock-footage aesthetics?
-
-## 11) Short command for NotebookLM
-"Use uploaded sources and `WetSeaTech_Graphic_Identity_NotebookLM`. Generate a video/audio storyboard with visual continuity. For each section provide narration, visual concept, framing, palette, motion, and anti-drift warning. Keep the style dark, technical, minimal, cyber-infrastructure oriented, with cyan accents and recurring radar/wave/network metaphors."
-
-## Operational note
-This file is a style source for NotebookLM. Final rendering quality depends on external image/video/editing tools.
+Use `brand/wetseatech_program.md` in new NotebookLM projects. This path remains
+temporarily available so existing notebooks do not fail.
 
 ---
 
@@ -3049,269 +3528,15 @@ This file is a style source for NotebookLM. Final rendering quality depends on e
 
 ## 📄 SOURCE: `notebooklm/clap.md`
 
-WST Hook Framework — CLAC Method
+# Compatibility Reference — CLAC Framework
 
-Purpose
+**Status:** LEGACY ADAPTER
+**Canonical source:** `frameworks/clac.md`
 
-The CLAC method is a hook architecture designed to maximize attention during the first 10–20 seconds of a video, audio overview, podcast, presentation, or documentary.
+The former content of this file duplicated the CLAC specification. It has been
+consolidated into the canonical framework. Keep this file only for temporary
+NotebookLM and link compatibility; do not maintain a second CLAC version here.
 
-Its purpose is not clickbait.
-
-Its purpose is to:
-
-* establish relevance quickly,
-* create curiosity,
-* challenge assumptions,
-* open an information gap,
-* create a reason to continue watching.
-
-The viewer should immediately think:
-
-* “This concerns me.”
-* “I did not expect that.”
-* “I want to understand why.”
-
-⸻
-
-CLAC Overview
-
-CLAC stands for:
-
-C — Context
-
-Explain immediately:
-
-* what the subject is,
-* what system is concerned,
-* what is happening,
-* what the discussion is about.
-
-Duration:
-
-3–5 seconds.
-
-Avoid:
-
-* greetings,
-* long introductions,
-* historical context,
-* channel presentation.
-
-Good Example
-
-“Most companies believe AI increases productivity.”
-
-Bad Example
-
-“Today we are going to discuss artificial intelligence and how it is transforming the world.”
-
-⸻
-
-L — Lean In
-
-Create relevance.
-
-The viewer must understand why the topic matters.
-
-Possible triggers:
-
-* hidden risk,
-* hidden cost,
-* hidden dependency,
-* missed opportunity,
-* operational consequence.
-
-The audience should feel:
-
-“This affects me.”
-
-Good Example
-
-“The problem is that most of those productivity gains disappear once workflows become complex.”
-
-Bad Example
-
-“AI is becoming increasingly important in modern organizations.”
-
-⸻
-
-A — Arrest
-
-Interrupt the expected interpretation.
-
-Introduce friction.
-
-Break a common assumption.
-
-Create a contradiction.
-
-Possible tools:
-
-* paradox,
-* surprising evidence,
-* operational failure,
-* hidden mechanism.
-
-The audience should think:
-
-“Wait.”
-
-Good Example
-
-“The biggest limitation is not the model.”
-
-Bad Example
-
-“However, there are also challenges.”
-
-⸻
-
-C — Counterdirection
-
-Reveal a more accurate explanation.
-
-Redirect attention toward the real mechanism.
-
-Move from symptom to cause.
-
-Move from surface narrative to system reality.
-
-Good Example
-
-“The real constraint is context management. When context collapses, productivity collapses.”
-
-Bad Example
-
-“There are many factors to consider.”
-
-⸻
-
-CLAC Structure Template
-
-CONTEXT
-What is happening?
-↓
-LEAN IN
-Why should the audience care?
-↓
-ARREST
-Which assumption is wrong?
-↓
-COUNTERDIRECTION
-What is the deeper explanation?
-
-⸻
-
-Example — Claude Code
-
-Context
-
-Most developers think Claude Code is primarily a coding tool.
-
-Lean In
-
-That assumption influences how teams measure productivity gains.
-
-Arrest
-
-The largest gains often do not come from code generation.
-
-Counterdirection
-
-They come from context preservation, repository understanding and workflow orchestration.
-
-⸻
-
-Example — Cybersecurity Governance
-
-Context
-
-Many organizations continue to treat cybersecurity governance as a compliance exercise.
-
-Lean In
-
-That choice directly affects risk visibility and operational resilience.
-
-Arrest
-
-The problem is not excessive governance.
-
-Counterdirection
-
-The problem is static governance disconnected from operational reality.
-
-⸻
-
-Example — AI Agents
-
-Context
-
-AI agents are becoming increasingly capable of executing multi-step workflows.
-
-Lean In
-
-Organizations expect automation gains across many business functions.
-
-Arrest
-
-Capability is not the primary challenge.
-
-Counterdirection
-
-Reliability, orchestration and governance become the limiting factors.
-
-⸻
-
-WST CLAC Rules
-
-Always:
-
-* start with reality,
-* move quickly,
-* challenge assumptions,
-* reveal mechanisms.
-
-Prefer:
-
-* contradictions,
-* hidden dependencies,
-* operational consequences,
-* measurable effects.
-
-Avoid:
-
-* hype,
-* marketing,
-* emotional amplification,
-* generic introductions.
-
-⸻
-
-CLAC Quality Checklist
-
-A CLAC hook is successful if the audience immediately understands:
-
-✓ What is being discussed
-
-✓ Why it matters
-
-✓ Why common understanding is incomplete
-
-✓ What deeper mechanism will be revealed
-
-If one of these elements is missing, rewrite the hook.
-
-⸻
-
-WST Principle
-
-A good hook does not create artificial suspense.
-
-A good hook creates a legitimate knowledge gap.
-
-The audience stays because understanding is incomplete.
-
-Not because information is being withheld.
 ---
 
 <a id="source-notebooklm-directives-md"></a>
@@ -3637,7 +3862,7 @@ Summary: neon, cyberpunk, gaming, RGB, glitch, startup branding, cartoon, kawaii
 shocked face, red arrows, stock photography, corporate aesthetic, saturated gradients.
 
 ## MASCOT CONSTRAINTS (if mascot is used)
-→ See `identity/mascot.md` for full specification.
+→ See `brand/mascot.md` for full specification.
 Summary: silent, intelligent, symbolic, restrained, observant, non-cartoon, geometric primitives.
 
 ## OUTPUT FORMAT
@@ -3720,7 +3945,7 @@ Summary: neon, cyberpunk, gaming, cartoon, clickbait, stock photography, corpora
 ## Mise à jour
 
 Pour ajouter un nouvel élément interdit : modifier ce fichier uniquement.
-Mentionner le changement dans `identity/forbidden.md` si c'est un interdit visuel général.
+Mentionner le changement dans `brand/forbidden.md` si c'est un interdit visuel général.
 
 ---
 
@@ -3943,7 +4168,7 @@ Copier le prompt complet depuis `examples/prompt_examples.md` et remplacer
 - [ ] Un seul concept visible ?
 - [ ] Cyan utilisé comme signal, pas comme fond ?
 - [ ] Aucun élément clickbait ?
-- [ ] Anti-drift checklist passée → `identity/forbidden.md`
+- [ ] Anti-drift checklist passée → `brand/forbidden.md`
 
 ---
 
@@ -3951,37 +4176,13 @@ Copier le prompt complet depuis `examples/prompt_examples.md` et remplacer
 
 ## 📄 SOURCE: `references/visual_references.md`
 
-# Visual References Matrix
+# Compatibility Reference — Visual References
 
-## Japanese Editorial Design
-- Modular grids.
-- Restrained asymmetry.
-- Typographic silence.
+**Status:** LEGACY ADAPTER
+**Canonical source:** `brand/visual_references.md`
 
-## Marine Cartography
-- Contour logic.
-- Depth gradients.
-- Coordinate realism.
-
-## Scientific Instrumentation
-- Label precision.
-- Measurement cues.
-- Data hierarchy.
-
-## Documentary Photography
-- Real textures.
-- Atmospheric subtlety.
-- Context-rich framing.
-
-## Modernist Architecture
-- Structural rhythm.
-- Material sobriety.
-- Functional composition.
-
-## Mature Manga Minimalism
-- Disciplined linework.
-- Tonal economy.
-- Narrative stillness.
+This path is retained temporarily for compatibility. Do not maintain visual
+reference rules here.
 
 ---
 

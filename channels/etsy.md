@@ -1,7 +1,7 @@
 # WetSea Observatory — Canal Etsy
 <!-- Enrichi depuis docs/etsy_branding.md -->
 
-> Palette & typo → `design_tokens.yaml` | Interdits → `identity/forbidden.md`
+> Palette & typo → `design_tokens.yaml` | Interdits → `brand/forbidden.md`
 
 ---
 
@@ -82,7 +82,7 @@
 
 ## Interdits spécifiques Etsy
 
-En complément de `identity/forbidden.md` :
+En complément de `brand/forbidden.md` :
 - Mockups avec personnes (mains trop visibles, corps partiels en scène)
 - Fonds de photos surchargés (bibliothèques, décors complexes)
 - Polices décoratives ou fantaisie dans les titres produit

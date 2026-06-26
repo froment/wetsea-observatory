@@ -52,4 +52,4 @@ Summary: neon, cyberpunk, gaming, cartoon, clickbait, stock photography, corpora
 ## Mise à jour
 
 Pour ajouter un nouvel élément interdit : modifier ce fichier uniquement.
-Mentionner le changement dans `identity/forbidden.md` si c'est un interdit visuel général.
+Mentionner le changement dans `brand/forbidden.md` si c'est un interdit visuel général.

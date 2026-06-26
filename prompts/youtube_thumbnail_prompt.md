@@ -28,4 +28,4 @@ Copier le prompt complet depuis `examples/prompt_examples.md` et remplacer
 - [ ] Un seul concept visible ?
 - [ ] Cyan utilisé comme signal, pas comme fond ?
 - [ ] Aucun élément clickbait ?
-- [ ] Anti-drift checklist passée → `identity/forbidden.md`
+- [ ] Anti-drift checklist passée → `brand/forbidden.md`

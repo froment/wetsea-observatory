@@ -1,6 +1,6 @@
 # WetSea Observatory — Brand Guidelines
 <!-- Naming rule appliquée : "WetAndSeaAI / WetSeaTech" sont des labels programme, pas le nom canonique -->
-<!-- Voir identity/brand_core.md pour la version consolidée de ce fichier -->
+<!-- LEGACY — Voir brand/core.md pour la version canonique consolidée. -->
 
 ## Positioning
 A cinematic technical editorial observatory documenting hidden systems between oceans, infrastructures, and signals.
@@ -39,7 +39,7 @@ The system must remain coherent for:
 - premium Etsy products,
 - desk objects,
 - editorial blog visuals.
-Imahge generation 
+Image generation
 WST PRIORITY RULE
 - Prefer omission over invention.
 -Negative space is superior to fabricated detail.
