@@ -1,6 +1,6 @@
 # WST Observatory — Directives Consolidées
 
-> **Auto-généré** par `scripts/build_master.sh` · Last update : 2026-06-18T20:11:20Z
+> **Auto-généré** par `scripts/build_master.sh` · Last update : 2026-06-26T02:25:57Z
 > Source : https://github.com/FROMENT/wetsea-observatory
 > **Ne pas éditer ce fichier manuellement** — il est régénéré à chaque push.
 
