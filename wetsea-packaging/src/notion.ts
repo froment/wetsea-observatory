@@ -50,6 +50,27 @@ export function composeReferences(kit: EditorialKit): string {
     .join("\n");
 }
 
+// Page blocks for publisher_final.py (it renders the body from children, not
+// the Content property). Only block types it handles: paragraph, heading_2,
+// bulleted_list_item, quote.
+type RT = { type: "text"; text: { content: string }; annotations?: Record<string, boolean> };
+const rt = (content: string, annotations?: Record<string, boolean>): RT =>
+  annotations ? { type: "text", text: { content }, annotations } : { type: "text", text: { content } };
+
+export function buildBlocks(kit: EditorialKit): unknown[] {
+  const para = (rts: RT[]) => ({ object: "block", type: "paragraph", paragraph: { rich_text: rts } });
+  const h2 = (t: string) => ({ object: "block", type: "heading_2", heading_2: { rich_text: [rt(t)] } });
+  const li = (rts: RT[]) => ({ object: "block", type: "bulleted_list_item", bulleted_list_item: { rich_text: rts } });
+  const quote = (t: string) => ({ object: "block", type: "quote", quote: { rich_text: [rt(t)] } });
+
+  const blocks: unknown[] = [para([rt(kit.hook_intro)]), h2("Faits marquants")];
+  for (const f of kit.faits_marquants) blocks.push(li([rt(`[${f.label}] `, { bold: true }), rt(f.fait)]));
+  blocks.push(h2("Chapitres"));
+  for (const c of kit.chapitrage_youtube) blocks.push(li([rt(c.timestamp, { code: true }), rt(` ${c.titre}`)]));
+  blocks.push(quote(kit.ecran_de_fin_cta));
+  return blocks; // ~15 blocks, well under the 100-per-create limit
+}
+
 async function existsByEpisodeUrl(env: Env, url: string): Promise<boolean> {
   const res = await fetch(`${API}/data_sources/${env.NOTION_DATA_SOURCE_ID}/query`, {
     method: "POST",
@@ -92,10 +113,13 @@ export async function publishToNotion(
         Titre: { title: richText(kit.titre) },
         ID_Episode: { url: episodeUrl },
         Synopsis: { rich_text: richText(kit.hook_intro) },
+        // Body in BOTH places: Content property (publisher V4.2) ...
         Content: { rich_text: richText(composeNotionBody(kit)) },
         references: { rich_text: richText(composeReferences(kit)) },
         Statut: { select: { name: "📝 Brouillon" } },
       },
+      // ... and page blocks (publisher_final.py renders the body from children).
+      children: buildBlocks(kit),
     }),
   });
   if (!res.ok) throw new Error(`Notion create page ${res.status}: ${await res.text()}`);

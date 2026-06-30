@@ -79,8 +79,12 @@ Python publisher (`chroniques-...-publisher`) reads Notion and pushes to
 WordPress. The Worker never calls WordPress.
 
 - Maps the kit to the DB schema: `Titre` (title), `ID_Episode` (url = the
-  YouTube link), `Synopsis` (hook), `Content` (Markdown body: facts + chapters
-  + CTA), `references` (sources), `Statut` = `📝 Brouillon`.
+  YouTube link), `Synopsis` (hook), `references` (sources), `Statut` =
+  `📝 Brouillon`.
+- **Body written twice for cross-version robustness**: the `Content` property
+  (read by publisher V4.2) **and** page **blocks** — `publisher_final.py`
+  renders the body from page children, not from `Content`. Only block types it
+  handles are emitted (paragraph, heading_2, bulleted_list_item, quote).
 - **Opt-in** (`NOTION_PUBLISH="true"`) and **idempotent** (skips if a page with
   the same `ID_Episode` URL already exists).
 - Draft status means nothing auto-publishes to WordPress — a human/publisher
