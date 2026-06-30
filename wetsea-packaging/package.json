@@ -5,7 +5,8 @@
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "get-yt-token": "node scripts/get-youtube-refresh-token.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.40.0",

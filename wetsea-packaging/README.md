@@ -66,6 +66,27 @@ the validator already guarantees this), so the description *is* the chapter sour
   account can't manage a personal channel). Mint a refresh token once with
   scope `https://www.googleapis.com/auth/youtube.force-ssl` and store it as
   `YT_REFRESH_TOKEN` (+ client id/secret).
+
+### Mint `YT_REFRESH_TOKEN` (one-off)
+
+1. Google Cloud Console: enable **YouTube Data API v3**; create an OAuth client
+   of type **Desktop app**; on the consent screen add the `youtube.force-ssl`
+   scope (and add the channel-owner account as a Test user if the app is in
+   Testing).
+2. Run the helper (Node 18+, no deps) and authorize **with the channel-owner
+   account**:
+   ```sh
+   YT_CLIENT_ID=xxx YT_CLIENT_SECRET=yyy npm run get-yt-token
+   ```
+   It opens the consent URL, captures the loopback redirect, and prints the
+   refresh token.
+3. Store the three values, then enable publishing:
+   ```sh
+   wrangler secret put YT_CLIENT_ID
+   wrangler secret put YT_CLIENT_SECRET
+   wrangler secret put YT_REFRESH_TOKEN
+   # set YT_PUBLISH = "true" in wrangler.toml [vars] when ready to go live
+   ```
 - **Non-destructive update.** `videos.update` replaces the whole `snippet`, so
   the code first `videos.list`s the current snippet and merges — preserving
   `categoryId` (required), `tags`, `defaultLanguage`. Only title + description
