@@ -1,0 +1,25 @@
+[
+  {
+    "document": "SP 800-190 — Application Container Security Guide",
+    "auteur": "NIST",
+    "date": "2017",
+    "claim": "Les conteneurs partagent le noyau de l'hôte et s'isolent via namespaces/cgroups ; frontière plus faible qu'une VM.",
+    "fait_label": "OBSERVED",
+    "url": "https://csrc.nist.gov/pubs/sp/800/190/final"
+  },
+  {
+    "document": "SP 800-125 — Guide to Security for Full Virtualization Technologies",
+    "auteur": "NIST",
+    "date": "2011",
+    "claim": "L'hyperviseur isole chaque VM avec son propre noyau invité : frontière d'isolation forte.",
+    "fait_label": "OBSERVED",
+    "url": "https://csrc.nist.gov/pubs/sp/800/125/final"
+  },
+  {
+    "document": "Documentation — modes de permission & sandboxing des agents",
+    "auteur": "Anthropic (Claude Code)",
+    "date": "à vérifier",
+    "claim": "Les actions sensibles de l'agent sont soumises à validation humaine explicite (human-in-the-loop).",
+    "fait_label": "INFERRED"
+  }
+]

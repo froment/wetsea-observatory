@@ -1,0 +1,107 @@
+{
+  "_pilot": "3 newest @wetseatech long-form videos. Transcript-grounded; sources mixed (real + à vérifier). Replace flagged sources with NotebookLM golden sources.",
+  "kits": [
+    {
+      "videoId": "7C9LEnHSX6o",
+      "project": "WetSeaTech",
+      "content_type": "video_script",
+      "langue": "fr",
+      "sujet": "Les 5 niveaux d'abstraction de Kubernetes : de la plateforme à l'autonomie",
+      "tone_flags": ["analytical", "restrained_irony"],
+      "forbidden_phrases": ["en conclusion", "révolutionnaire", "game changer", "incontournable", "n'oubliez pas de liker"],
+      "color_palette": { "primary": "#0A1A2B", "secondary": "#2A2F36", "accent": "#5E8FA3" },
+      "visual_style": "technical_documentary",
+      "titre": "Kubernetes : 5 niveaux pour le faire disparaître",
+      "hook_intro": "Le but n'est pas d'utiliser Kubernetes — c'est de le faire disparaître. Cinq couches d'abstraction transforment l'orchestrateur le plus complexe en plateforme qui s'auto-répare.",
+      "faits_marquants": [
+        { "label": "OBSERVED", "fait": "Le GitOps fait de Git l'unique source de vérité : un agent comme Argo CD réconcilie en continu l'état réel du cluster avec l'état déclaré et versionné.", "source_ref": "Argo CD — Documentation" },
+        { "label": "OBSERVED", "fait": "Le KSPM compare en continu la configuration des clusters aux référentiels CIS et alerte sur les erreurs de configuration, une source majeure de failles Kubernetes.", "source_ref": "CIS Kubernetes Benchmark" },
+        { "label": "INFERRED", "fait": "L'autoscaling natif sépare deux leviers : le HPA ajoute des répliques selon une métrique (CPU, voire taux d'usage GPU), le VPA ajuste CPU/mémoire par pod — combinés, ils réduisent le gaspillage.", "source_ref": "Kubernetes — Pod Autoscaling (HPA/VPA)" }
+      ],
+      "ecran_de_fin_cta": "Pour aller plus loin : le décryptage complet sur WetSeaTech.",
+      "sources_or": [
+        { "document": "Argo CD — Documentation", "auteur": "Argo Project (CNCF)", "date": "n.d.", "claim": "Réconciliation continue de l'état déclaré dans Git avec l'état du cluster (GitOps).", "fait_associe": "faits_marquants[0]" },
+        { "document": "CIS Kubernetes Benchmark", "auteur": "Center for Internet Security", "date": "à vérifier (révisions régulières)", "claim": "Référentiel de configuration sécurisée des clusters, utilisé comme base par le KSPM.", "fait_associe": "faits_marquants[1]" },
+        { "document": "Kubernetes — Pod Autoscaling (HPA/VPA)", "auteur": "Kubernetes / CNCF", "date": "n.d.", "claim": "HPA ajuste le nombre de répliques ; VPA ajuste les ressources allouées par pod.", "fait_associe": "faits_marquants[2]" }
+      ],
+      "chapitrage_youtube": [
+        { "timestamp": "00:00", "titre": "Introduction" },
+        { "timestamp": "00:30", "titre": "Le pari : faire disparaître Kubernetes" },
+        { "timestamp": "01:15", "titre": "Niveau 1 — Platform Engineering" },
+        { "timestamp": "02:30", "titre": "Niveau 2 — Automatisation (CI/CD, GitOps)" },
+        { "timestamp": "03:45", "titre": "Niveau 3 — Sécurité intégrée (DevSecOps, KSPM)" },
+        { "timestamp": "05:00", "titre": "Niveau 4 — Élasticité (HPA / VPA)" },
+        { "timestamp": "06:30", "titre": "Niveau 5 — Autonomie (self-healing, multi-agent)" },
+        { "timestamp": "08:00", "titre": "Kubernetes comme avantage stratégique" }
+      ],
+      "statut_sources": "Argo CD / CIS / Kubernetes = sources solides et vérifiables. 'Fred' (multi-agent) et 'Karma' (jumeaux numériques + RL) cités dans la vidéo NON inclus faute de vérification — à confirmer via NotebookLM."
+    },
+    {
+      "videoId": "IyhNU4nwIEQ",
+      "project": "WetSeaTech",
+      "content_type": "video_script",
+      "langue": "fr",
+      "sujet": "Modèles de monde (world models) : la prochaine étape vers l'AGI ?",
+      "tone_flags": ["analytical", "restrained_irony"],
+      "forbidden_phrases": ["en conclusion", "révolutionnaire", "game changer", "incontournable", "n'oubliez pas de liker"],
+      "color_palette": { "primary": "#0A1A2B", "secondary": "#2A2F36", "accent": "#5E8FA3" },
+      "visual_style": "technical_documentary",
+      "titre": "Modèles de monde : l'IA qui simule au lieu de parler",
+      "hook_intro": "Un LLM écrit l'histoire d'une balle qui tombe. Un modèle de monde la simule — il a appris la gravité. Prédire l'état du monde, pas le prochain mot : le pari qui vise l'AGI.",
+      "faits_marquants": [
+        { "label": "OBSERVED", "fait": "Un LLM est entraîné à prédire le mot suivant à partir de texte : il apprend comment on parle du monde, pas comment le monde fonctionne (causalité, physique).", "source_ref": "A Path Towards Autonomous Machine Intelligence (JEPA)" },
+        { "label": "INFERRED", "fait": "L'architecture JEPA prédit une représentation abstraite du futur plutôt que chaque pixel, pour séparer le signal du bruit et rendre possible la planification.", "source_ref": "A Path Towards Autonomous Machine Intelligence (JEPA)" },
+        { "label": "HYPOTHETICAL", "fait": "Coupler un générateur de mondes (Genie) à des agents (SIMA) créerait une boucle d'entraînement quasi infinie sans données humaines — piste vers l'AGI, non démontrée.", "source_ref": "Genie — modèles de monde interactifs" }
+      ],
+      "ecran_de_fin_cta": "Pour aller plus loin : sources et schémas sur WetSeaTech.",
+      "sources_or": [
+        { "document": "A Path Towards Autonomous Machine Intelligence (JEPA)", "auteur": "Yann LeCun", "date": "2022 (à vérifier)", "claim": "Critique des LLM et architecture prédictive à embeddings joints (prédire des représentations abstraites).", "fait_associe": "faits_marquants[0] et [1]" },
+        { "document": "Genie — modèles de monde interactifs", "auteur": "Google DeepMind", "date": "à vérifier (Genie 3 cité dans la vidéo)", "claim": "Génération d'environnements jouables en temps réel à partir d'une image ou d'un texte.", "fait_associe": "faits_marquants[2]" },
+        { "document": "SIMA — agent généraliste en environnements 3D", "auteur": "Google DeepMind", "date": "à vérifier", "claim": "Agent qui apprend à accomplir des tâches dans des mondes simulés.", "fait_associe": "faits_marquants[2]" }
+      ],
+      "chapitrage_youtube": [
+        { "timestamp": "00:00", "titre": "Introduction" },
+        { "timestamp": "00:25", "titre": "Pourquoi les LLM coincent" },
+        { "timestamp": "01:30", "titre": "Qu'est-ce qu'un modèle de monde ?" },
+        { "timestamp": "03:00", "titre": "JEPA (Meta/LeCun) vs Genie (DeepMind)" },
+        { "timestamp": "05:00", "titre": "La boucle d'entraînement infinie" },
+        { "timestamp": "06:30", "titre": "Robotique et voitures autonomes" },
+        { "timestamp": "08:00", "titre": "Langage d'abord ou physique d'abord ? Vers l'AGI" }
+      ],
+      "statut_sources": "JEPA/LeCun, Genie et SIMA sont des références réelles MAIS dates et 'Genie 3' à confirmer (postérieur au cutoff). L'affirmation 'LeCun quitte Meta pour un nouveau labo' vient de la vidéo et reste à vérifier — ne pas publier sans contrôle via NotebookLM."
+    },
+    {
+      "videoId": "z--wPuY2d4c",
+      "project": "WetSeaTech",
+      "content_type": "video_script",
+      "langue": "fr",
+      "sujet": "Le cybercôtier : l'identité visuelle de la boutique WetSeaTech",
+      "tone_flags": ["analytical", "restrained_irony"],
+      "forbidden_phrases": ["en conclusion", "révolutionnaire", "game changer", "incontournable", "n'oubliez pas de liker"],
+      "color_palette": { "primary": "#0A1A2B", "secondary": "#2A2F36", "accent": "#5E8FA3" },
+      "visual_style": "technical_documentary",
+      "titre": "Cybercôtier : quand l'océan rencontre nos données",
+      "hook_intro": "Fragments de notre vie connectée, capturés juste avant qu'ils disparaissent. Le cybercôtier fond vie marine et réseaux de données dans un minimalisme qui privilégie le sens, pas la tendance.",
+      "faits_marquants": [
+        { "label": "OBSERVED", "fait": "La boutique décline une esthétique baptisée « cybercôtier » par Pascal Froment : fusion de vie marine et de réseaux de données en design minimaliste.", "source_ref": "brand/core.md — ADN visuel WetSeaTech" },
+        { "label": "OBSERVED", "fait": "Les pièces portent une intention : le « Magic Mug » révèle à la chaleur des signaux cachés ; le t-shirt « Slow Flow » évoque les courants océaniques lents.", "source_ref": "Catalogue boutique (mugs, t-shirts)" },
+        { "label": "INFERRED", "fait": "La direction artistique s'aligne sur le canon WetSeaTech : minimalisme japonais (shoshin), sobriété, sens avant la tendance marketing.", "source_ref": "brand_guidelines.md — direction artistique" }
+      ],
+      "ecran_de_fin_cta": "Pour aller plus loin : la boutique cybercôtier de WetSeaTech.",
+      "sources_or": [
+        { "document": "brand/core.md — ADN visuel WetSeaTech", "auteur": "Observatoire WetSeaTech", "date": "n.d.", "claim": "Positionnement « cybercôtier » : infrastructures invisibles, design minimaliste cinématographique.", "fait_associe": "faits_marquants[0]" },
+        { "document": "Catalogue boutique (mugs, t-shirts)", "auteur": "WetSeaTech / Pascal Froment", "date": "n.d.", "claim": "Magic Mug thermosensible ; t-shirt Slow Flow ; motifs Shoshin.", "fait_associe": "faits_marquants[1]" },
+        { "document": "brand_guidelines.md — direction artistique", "auteur": "Observatoire WetSeaTech", "date": "n.d.", "claim": "Minimalisme japonais, sobriété, ≥ 25 % d'espace négatif, accent cyan #5E8FA3.", "fait_associe": "faits_marquants[2]" }
+      ],
+      "chapitrage_youtube": [
+        { "timestamp": "00:00", "titre": "Introduction" },
+        { "timestamp": "00:20", "titre": "Le concept « cybercôtier »" },
+        { "timestamp": "01:00", "titre": "Le Magic Mug : signaux révélés par la chaleur" },
+        { "timestamp": "01:40", "titre": "Le t-shirt « Slow Flow »" },
+        { "timestamp": "02:10", "titre": "Shoshin : minimalisme japonais" },
+        { "timestamp": "02:40", "titre": "Le sens avant la tendance" }
+      ],
+      "statut_sources": "Vidéo de marque : pas de sources scientifiques externes. Les 'sources d'or' renvoient au canon de marque (brand/core.md, brand_guidelines.md) lu dans wetsea-observatory — vérifier les noms de fichiers/produits exacts."
+    }
+  ]
+}
