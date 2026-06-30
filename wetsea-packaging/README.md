@@ -12,7 +12,8 @@ cron ─▶ scheduled(): list /WetSea/* folders, skip ones already published
           └─▶ Workflow per video:
                 1. read Drive   (service-account JWT, drive.readonly)
                 2. generate     (Claude Opus 4.8, structured outputs + retry-on-validation)
-                3. commit       (GitHub Contents API → data/packaging/<videoId>.json)
+                3. commit       (GitHub Contents API → data/packaging/<videoId>.json) → Hugo
+                4. publish      (YouTube Data API: title + description + chapters) — OPT-IN
 ```
 
 Also exposes `POST /run { videoId, folderId, sujet, langue? }` for manual runs.
@@ -41,10 +42,33 @@ wrangler secret put ANTHROPIC_API_KEY      # Anthropic key
 wrangler secret put GCP_SA_EMAIL           # service-account email
 wrangler secret put GCP_SA_PRIVATE_KEY     # PEM PKCS8 private key (full BEGIN/END block)
 wrangler secret put GITHUB_TOKEN           # fine-grained PAT, Contents:write on the site repo
+# YouTube write-back (only if you enable it — see below):
+wrangler secret put YT_CLIENT_ID
+wrangler secret put YT_CLIENT_SECRET
+wrangler secret put YT_REFRESH_TOKEN       # scope youtube.force-ssl
 # set DRIVE_ROOT_FOLDER_ID in wrangler.toml [vars] to the Drive id of /WetSea
 npm run typecheck
 npm run deploy
 ```
+
+## YouTube write-back (step 4)
+
+Pushes the kit onto the actual video: **title** and a **description** that
+embeds the chapters (`00:00 Introduction …`). YouTube turns those timestamps
+into clickable chapters automatically (first must be `00:00`, ≥3, ≥10s apart —
+the validator already guarantees this), so the description *is* the chapter source.
+
+- **Opt-in & safe by default.** `YT_PUBLISH = "false"` (default) → the step
+  *composes* the title/description and returns them **without touching YouTube**
+  (dry-run). Set `YT_PUBLISH = "true"` to actually update the video.
+- **Auth = OAuth as the channel owner**, not a service account (a service
+  account can't manage a personal channel). Mint a refresh token once with
+  scope `https://www.googleapis.com/auth/youtube.force-ssl` and store it as
+  `YT_REFRESH_TOKEN` (+ client id/secret).
+- **Non-destructive update.** `videos.update` replaces the whole `snippet`, so
+  the code first `videos.list`s the current snippet and merges — preserving
+  `categoryId` (required), `tags`, `defaultLanguage`. Only title + description
+  change.
 
 ## Test one video without waiting for cron
 

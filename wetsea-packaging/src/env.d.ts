@@ -8,12 +8,17 @@ export interface Env {
   SITE_REPO: string;            // "owner/repo"
   GENERATION_MODEL: string;     // "claude-opus-4-8"
   DRIVE_ROOT_FOLDER_ID: string; // Drive folder id of /WetSea
+  YT_PUBLISH: string;           // "true" to actually write to YouTube; anything else = dry-run
 
   // Secrets
   ANTHROPIC_API_KEY: string;
   GCP_SA_EMAIL: string;
   GCP_SA_PRIVATE_KEY: string;   // PEM PKCS8
   GITHUB_TOKEN: string;
+  // YouTube write-back (OAuth as channel owner — NOT a service account)
+  YT_CLIENT_ID: string;
+  YT_CLIENT_SECRET: string;
+  YT_REFRESH_TOKEN: string;     // scope: https://www.googleapis.com/auth/youtube.force-ssl
 }
 
 // Workflow input params (one instance per video).

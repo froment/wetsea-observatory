@@ -4,6 +4,7 @@ import { readVideoInputs } from "./drive";
 import { generateKit } from "./generator";
 import { assembleKit } from "./schema";
 import { commitKit } from "./github";
+import { publishToYouTube } from "./youtube";
 
 export class PackagingWorkflow extends WorkflowEntrypoint<Env, PackagingParams> {
   async run(event: WorkflowEvent<PackagingParams>, step: WorkflowStep) {
@@ -26,6 +27,14 @@ export class PackagingWorkflow extends WorkflowEntrypoint<Env, PackagingParams> 
       commitKit(this.env, p.videoId, kit),
     );
 
-    return { videoId: p.videoId, commitSha };
+    // Write the kit back to the YouTube video (title + description + chapters).
+    // Opt-in: dry-run unless YT_PUBLISH === "true".
+    const youtube = await step.do(
+      "publish to YouTube",
+      { retries: { limit: 2, delay: "20 seconds", backoff: "exponential" }, timeout: "2 minutes" },
+      () => publishToYouTube(this.env, p.videoId, kit),
+    );
+
+    return { videoId: p.videoId, commitSha, youtube: { applied: youtube.applied, title: youtube.title } };
   }
 }
