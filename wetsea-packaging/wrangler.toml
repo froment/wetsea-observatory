@@ -20,6 +20,9 @@ GENERATION_MODEL = "claude-opus-4-8"
 DRIVE_ROOT_FOLDER_ID = ""
 # YouTube write-back is OPT-IN. "false" (default) = compose only (dry-run); "true" = update the video.
 YT_PUBLISH = "false"
+# Notion draft (-> WordPress via the Chroniques publisher). Data source of the Chroniques DB.
+NOTION_DATA_SOURCE_ID = "647e4372-7470-4441-8435-cf3cc7680682"
+NOTION_PUBLISH = "false" # "true" = create the Notion draft; otherwise dry-run
 
 # Secrets (set with `wrangler secret put <NAME>`):
 #   ANTHROPIC_API_KEY    - Anthropic API key
@@ -29,3 +32,4 @@ YT_PUBLISH = "false"
 #   YT_CLIENT_ID         - OAuth client id (channel owner)
 #   YT_CLIENT_SECRET     - OAuth client secret
 #   YT_REFRESH_TOKEN     - OAuth refresh token, scope youtube.force-ssl
+#   NOTION_TOKEN         - Notion integration token (ntn_...) with access to the Chroniques DB

@@ -5,6 +5,7 @@ import { generateKit } from "./generator";
 import { assembleKit } from "./schema";
 import { commitKit } from "./github";
 import { publishToYouTube } from "./youtube";
+import { publishToNotion } from "./notion";
 
 export class PackagingWorkflow extends WorkflowEntrypoint<Env, PackagingParams> {
   async run(event: WorkflowEvent<PackagingParams>, step: WorkflowStep) {
@@ -35,6 +36,19 @@ export class PackagingWorkflow extends WorkflowEntrypoint<Env, PackagingParams> 
       () => publishToYouTube(this.env, p.videoId, kit),
     );
 
-    return { videoId: p.videoId, commitSha, youtube: { applied: youtube.applied, title: youtube.title } };
+    // Create a draft in the Chroniques Notion DB; the Python publisher pushes it
+    // to WordPress. Opt-in (NOTION_PUBLISH) and idempotent.
+    const notion = await step.do(
+      "publish to Notion (-> WordPress)",
+      { retries: { limit: 2, delay: "20 seconds", backoff: "exponential" }, timeout: "2 minutes" },
+      () => publishToNotion(this.env, p.videoId, kit),
+    );
+
+    return {
+      videoId: p.videoId,
+      commitSha,
+      youtube: { applied: youtube.applied, title: youtube.title },
+      notion: { applied: notion.applied, skipped: notion.skipped ?? false, pageId: notion.pageId },
+    };
   }
 }

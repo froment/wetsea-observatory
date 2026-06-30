@@ -9,6 +9,8 @@ export interface Env {
   GENERATION_MODEL: string;     // "claude-opus-4-8"
   DRIVE_ROOT_FOLDER_ID: string; // Drive folder id of /WetSea
   YT_PUBLISH: string;           // "true" to actually write to YouTube; anything else = dry-run
+  NOTION_DATA_SOURCE_ID: string;// Chroniques DB data source (collection) id
+  NOTION_PUBLISH: string;       // "true" to create the Notion draft; anything else = dry-run
 
   // Secrets
   ANTHROPIC_API_KEY: string;
@@ -19,6 +21,8 @@ export interface Env {
   YT_CLIENT_ID: string;
   YT_CLIENT_SECRET: string;
   YT_REFRESH_TOKEN: string;     // scope: https://www.googleapis.com/auth/youtube.force-ssl
+  // Notion (source for the WordPress publisher — "via Notion" variant)
+  NOTION_TOKEN: string;
 }
 
 // Workflow input params (one instance per video).

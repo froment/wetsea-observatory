@@ -13,7 +13,8 @@ cron ─▶ scheduled(): list /WetSea/* folders, skip ones already published
                 1. read Drive   (service-account JWT, drive.readonly)
                 2. generate     (Claude Opus 4.8, structured outputs + retry-on-validation)
                 3. commit       (GitHub Contents API → data/packaging/<videoId>.json) → Hugo
-                4. publish      (YouTube Data API: title + description + chapters) — OPT-IN
+                4. youtube      (YouTube Data API: title + description + chapters) — OPT-IN
+                5. notion       (draft in Chroniques DB → WordPress via the Python publisher) — OPT-IN
 ```
 
 Also exposes `POST /run { videoId, folderId, sujet, langue? }` for manual runs.
@@ -69,6 +70,23 @@ the validator already guarantees this), so the description *is* the chapter sour
   the code first `videos.list`s the current snippet and merges — preserving
   `categoryId` (required), `tags`, `defaultLanguage`. Only title + description
   change.
+
+## WordPress, via Notion (step 5)
+
+CMS canonical = **both** Hugo and WordPress. WordPress is reached **indirectly**:
+the Worker creates a **draft page** in the Chroniques Notion DB; the existing
+Python publisher (`chroniques-...-publisher`) reads Notion and pushes to
+WordPress. The Worker never calls WordPress.
+
+- Maps the kit to the DB schema: `Titre` (title), `ID_Episode` (url = the
+  YouTube link), `Synopsis` (hook), `Content` (Markdown body: facts + chapters
+  + CTA), `references` (sources), `Statut` = `📝 Brouillon`.
+- **Opt-in** (`NOTION_PUBLISH="true"`) and **idempotent** (skips if a page with
+  the same `ID_Episode` URL already exists).
+- Draft status means nothing auto-publishes to WordPress — a human/publisher
+  promotes it.
+- Secrets/vars: `NOTION_TOKEN` (integration with access to the DB),
+  `NOTION_DATA_SOURCE_ID` (preset to the Chroniques collection).
 
 ## Test one video without waiting for cron
 

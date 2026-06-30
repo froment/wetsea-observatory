@@ -31,7 +31,9 @@ CMS canonique : **les deux** — Hugo (`wetandseaai-site`) *et* WordPress
 | YouTube | `YT_CLIENT_ID` / `YT_CLIENT_SECRET` | write-back | OAuth client (proprietaire chaîne) |
 | YouTube | `YT_REFRESH_TOKEN` | write-back | scope `youtube.force-ssl` |
 | YouTube | `YT_PUBLISH` | gate (var, pas secret) | `"true"` pour publier, sinon dry-run |
-| Notion | `NOTION_TOKEN` | chroniques (source) | intégration Notion (`ntn_…`) |
+| Notion | `NOTION_TOKEN` | chroniques + wetsea-packaging (draft) | intégration Notion (`ntn_…`) avec accès à la DB |
+| Notion | `NOTION_DATA_SOURCE_ID` | wetsea-packaging | déjà préréglé : `647e4372-7470-4441-8435-cf3cc7680682` |
+| Notion | `NOTION_PUBLISH` | gate (var) | `"true"` pour créer le brouillon, sinon dry-run |
 | WordPress | `WORDPRESS_URL` | chroniques (publication) | `https://wetandseaai.fr` |
 | WordPress | `WP_USERNAME` / `WP_PASSWORD` | chroniques | application password WordPress |
 
