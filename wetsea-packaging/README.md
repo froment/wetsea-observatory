@@ -5,6 +5,14 @@ sources (mirrored in Google Drive) into the strict WetSeaTech **video packaging
 kit** JSON, then commits it to the `wetandseaai-site` repo (which triggers the
 existing Hugo build + Cloudflare deploy).
 
+## Documentation
+
+Role-based docs in [`docs/`](./docs/): [utilisateur](./docs/utilisateur.md) ·
+[éditeur](./docs/editeur.md) · [concepteur](./docs/concepteur.md) ·
+[administrateur](./docs/administrateur.md) ·
+[architecture](./docs/architecture.md). « Comment voir le site / vérifier une
+publication » : [`docs/README.md`](./docs/README.md).
+
 ## Flow
 
 ```
