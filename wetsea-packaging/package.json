@@ -1,0 +1,20 @@
+{
+  "name": "wetsea-packaging",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "typecheck": "tsc --noEmit",
+    "get-yt-token": "node scripts/get-youtube-refresh-token.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.109.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250601.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^4.0.0"
+  }
+}

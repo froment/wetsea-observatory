@@ -1,0 +1,41 @@
+name = "wetsea-packaging"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Cron fans out: one trigger -> scheduled() discovers pending videos -> N Workflow instances.
+[triggers]
+crons = ["0 6 * * *"] # daily 06:00 UTC; adjust as needed
+
+# Durable, step-retryable pipeline (one instance per video).
+[[workflows]]
+name = "wetsea-packaging-workflow"
+binding = "PACKAGING"
+class_name = "PackagingWorkflow"
+
+# Retroactive publish-only workflow (YouTube + Notion from a ready kit).
+[[workflows]]
+name = "wetsea-publish-workflow"
+binding = "PUBLISH"
+class_name = "PublishWorkflow"
+
+[vars]
+SITE_REPO = "FROMENT/wetandseaai-site"
+GENERATION_MODEL = "claude-opus-4-8"
+# DRIVE_ROOT_FOLDER_ID is the Drive folder id of /WetSea (set as a var or secret).
+DRIVE_ROOT_FOLDER_ID = ""
+# YouTube write-back is OPT-IN. "false" (default) = compose only (dry-run); "true" = update the video.
+YT_PUBLISH = "false"
+# Notion draft (-> WordPress via the Chroniques publisher). Data source of the Chroniques DB.
+NOTION_DATA_SOURCE_ID = "647e4372-7470-4441-8435-cf3cc7680682"
+NOTION_PUBLISH = "false" # "true" = create the Notion draft; otherwise dry-run
+
+# Secrets (set with `wrangler secret put <NAME>`):
+#   ANTHROPIC_API_KEY    - Anthropic API key
+#   GCP_SA_EMAIL         - service-account email (share /WetSea read-only with it)
+#   GCP_SA_PRIVATE_KEY   - service-account PEM private key (PKCS8, full BEGIN/END block)
+#   GITHUB_TOKEN         - fine-grained PAT, Contents:write on the site repo
+#   YT_CLIENT_ID         - OAuth client id (channel owner)
+#   YT_CLIENT_SECRET     - OAuth client secret
+#   YT_REFRESH_TOKEN     - OAuth refresh token, scope youtube.force-ssl
+#   NOTION_TOKEN         - Notion integration token (ntn_...) with access to the Chroniques DB
