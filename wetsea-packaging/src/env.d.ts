@@ -1,8 +1,9 @@
 import type { Workflow } from "cloudflare:workers";
 
 export interface Env {
-  // Workflow binding
-  PACKAGING: Workflow;
+  // Workflow bindings
+  PACKAGING: Workflow; // full pipeline (Drive -> generate -> Hugo -> YouTube -> Notion)
+  PUBLISH: Workflow;   // retroactive publish-only (YouTube + Notion) from a ready kit
 
   // Vars
   SITE_REPO: string;            // "owner/repo"

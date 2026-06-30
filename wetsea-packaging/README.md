@@ -121,6 +121,27 @@ curl -X POST https://wetsea-packaging.<your-subdomain>.workers.dev/run \
   -d '{"videoId":"isolation-agents","folderId":"<drive-folder-id>","sujet":"Trois modèles d'\''isolation pour sécuriser les agents IA"}'
 ```
 
+## Retroactive batch — `POST /publish`
+
+Publish **pre-computed** kits to YouTube + Notion only (no Drive read, no
+generation, no Hugo commit). One durable Workflow instance per video; each
+re-validates the kit, then runs the YouTube and Notion steps. Honours the same
+`YT_PUBLISH` / `NOTION_PUBLISH` opt-in flags (dry-run until enabled).
+
+Body is `{ kit }` or `{ kits: [...] }`; each kit must carry `videoId`. The
+pilot file is accepted verbatim:
+
+```sh
+curl -X POST https://wetsea-packaging.<your-subdomain>.workers.dev/publish \
+  -H 'content-type: application/json' \
+  --data @examples/pilot_kits.json
+# → { "created": [ { "videoId": "...", "instanceId": "..." }, ... ], "errors": [] }
+```
+
+This is the path for the ~40 existing `@wetseatech` videos: generate a kit per
+video (Drive pipeline, or a transcript-based generator), collect them into a
+`{ kits: [...] }` payload, and POST once.
+
 ## Hard rules enforced (validator.ts, drives the retry loop)
 
 - `titre` ≤ 60, `hook_intro` ≤ 200, `ecran_de_fin_cta` ≤ 80 (code points)

@@ -13,6 +13,12 @@ name = "wetsea-packaging-workflow"
 binding = "PACKAGING"
 class_name = "PackagingWorkflow"
 
+# Retroactive publish-only workflow (YouTube + Notion from a ready kit).
+[[workflows]]
+name = "wetsea-publish-workflow"
+binding = "PUBLISH"
+class_name = "PublishWorkflow"
+
 [vars]
 SITE_REPO = "FROMENT/wetandseaai-site"
 GENERATION_MODEL = "claude-opus-4-8"

@@ -1,13 +1,18 @@
 import type { Env, PackagingParams } from "./env";
+import type { PublishParams } from "./publish-workflow";
+import type { EditorialKit } from "./schema";
 import { listSubfolders } from "./drive";
 import { kitExists } from "./github";
 
 export { PackagingWorkflow } from "./workflow";
+export { PublishWorkflow } from "./publish-workflow";
 
 export default {
-  // Manual / API trigger: POST /run { videoId, folderId, sujet, langue? }
+  // Manual / API triggers.
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
+
+    // Full pipeline for one video (Drive -> generate -> Hugo -> YouTube -> Notion).
     if (req.method === "POST" && url.pathname === "/run") {
       const p = (await req.json().catch(() => null)) as Partial<PackagingParams> | null;
       if (!p?.videoId || !p?.folderId || !p?.sujet)
@@ -15,8 +20,34 @@ export default {
       const instance = await env.PACKAGING.create({ params: p as PackagingParams });
       return Response.json({ instanceId: instance.id });
     }
+
+    // Retroactive batch: publish pre-computed kits to YouTube + Notion only.
+    // Body: { kit } or { kits: [...] } — each kit must carry videoId. Accepts
+    // examples/pilot_kits.json verbatim. Respects YT_PUBLISH / NOTION_PUBLISH.
+    if (req.method === "POST" && url.pathname === "/publish") {
+      const body = (await req.json().catch(() => null)) as
+        | { kit?: (EditorialKit & { videoId?: string }); kits?: (EditorialKit & { videoId?: string })[] }
+        | null;
+      const kits = Array.isArray(body?.kits) ? body!.kits : body?.kit ? [body.kit] : null;
+      if (!kits?.length) return new Response("body: { kit } or { kits: [...] }", { status: 400 });
+
+      const created: { videoId: string; instanceId: string }[] = [];
+      const errors: { index: number; error: string }[] = [];
+      for (let i = 0; i < kits.length; i++) {
+        const kit = kits[i];
+        const videoId = kit?.videoId;
+        if (!videoId) {
+          errors.push({ index: i, error: "kit.videoId missing" });
+          continue;
+        }
+        const instance = await env.PUBLISH.create({ params: { videoId, kit } as PublishParams });
+        created.push({ videoId, instanceId: instance.id });
+      }
+      return Response.json({ created, errors });
+    }
+
     return new Response(
-      "wetsea-packaging — POST /run { videoId, folderId, sujet, langue? }",
+      "wetsea-packaging — POST /run { videoId, folderId, sujet } | POST /publish { kits: [...] }",
       { headers: { "content-type": "text/plain" } },
     );
   },
