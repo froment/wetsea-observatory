@@ -161,8 +161,9 @@ video (Drive pipeline, or a transcript-based generator), collect them into a
 ## Notes
 
 - TypeScript because Workers run JS/TS; the Anthropic **TS** SDK runs in Workers.
-- Structured outputs and citations are mutually exclusive in one call — the
-  source→fact map comes from the curated `sources.json`, not the citation API.
+- Generation uses `messages.create` + JSON parse + Zod validation with a
+  retry-on-violation loop (no SDK structured-output helper, for version
+  portability). The source→fact map comes from the curated `sources.json`.
   (Citation-grounding of facts against source PDFs is a possible second pass.)
 - Brand invariants (palette, tone_flags, forbidden_phrases, visual_style) are
   merged in `assembleKit()`, never model-generated.

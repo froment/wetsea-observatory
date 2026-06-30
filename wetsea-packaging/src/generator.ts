@@ -1,5 +1,4 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import type { Env } from "./env";
 import type { SourceEntry } from "./drive";
 import { EditorialKitSchema, type EditorialKit } from "./schema";
@@ -26,7 +25,16 @@ CHAPITRAGE YOUTUBE — au moins 3 chapitres, format MM:SS, strictement chronolog
 PHRASES INTERDITES — n'emploie jamais : "en conclusion", "révolutionnaire", "game changer",
   "incontournable", "n'oubliez pas de liker".
 
-Réponds uniquement via le format structuré demandé.`;
+CONTRAT DE SORTIE — réponds UNIQUEMENT avec un objet JSON valide, sans aucun texte ni balise
+Markdown autour, conforme exactement à ce schéma :
+{
+  "titre": string,
+  "hook_intro": string,
+  "faits_marquants": [{ "label": "OBSERVED" | "INFERRED" | "HYPOTHETICAL", "fait": string, "source_ref": string }],
+  "ecran_de_fin_cta": string,
+  "sources_or": [{ "document": string, "auteur": string, "date": string, "claim": string, "fait_associe": string }],
+  "chapitrage_youtube": [{ "timestamp": "MM:SS", "titre": string }]
+}`;
 
 function buildUserPrompt(brief: string, sources: SourceEntry[]): string {
   const lines = sources.map(
@@ -43,9 +51,37 @@ function buildUserPrompt(brief: string, sources: SourceEntry[]): string {
   ].join("\n");
 }
 
+// Extract a kit from the model text: strip an optional ```json fence, else take
+// the outermost {...} (so leaked reasoning prose before the JSON is tolerated),
+// then JSON.parse + Zod-validate the shape.
+function parseEditorial(text: string): { kit?: EditorialKit; error?: string } {
+  let raw = text.trim();
+  const fenced = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fenced) {
+    raw = fenced[1].trim();
+  } else {
+    const start = raw.indexOf("{");
+    const end = raw.lastIndexOf("}");
+    if (start >= 0 && end > start) raw = raw.slice(start, end + 1);
+  }
+  let obj: unknown;
+  try {
+    obj = JSON.parse(raw);
+  } catch (e) {
+    return { error: `JSON invalide: ${(e as Error).message}` };
+  }
+  const parsed = EditorialKitSchema.safeParse(obj);
+  if (!parsed.success) {
+    return { error: `schéma: ${parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; ")}` };
+  }
+  return { kit: parsed.data };
+}
+
 /**
- * Generate the editorial kit with Claude Opus 4.8 (structured outputs), then validate
- * against the hard rules. On violations, feed them back and retry (up to `maxAttempts`).
+ * Generate the editorial kit with Claude Opus 4.8, then validate against the hard
+ * rules. Malformed output or rule violations are fed back and retried (up to
+ * `maxAttempts`). Version-agnostic: plain messages.create + JSON + Zod (no
+ * structured-output helper, which is not in every SDK version).
  */
 export async function generateKit(
   env: Env,
@@ -58,33 +94,44 @@ export async function generateKit(
     { role: "user", content: buildUserPrompt(brief, sources) },
   ];
 
-  let lastViolations: string[] = ["no output produced"];
+  let last = "no output produced";
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    const res = await client.messages.parse({
+    const res = await client.messages.create({
       model: env.GENERATION_MODEL || "claude-opus-4-8",
       max_tokens: 8000,
       thinking: { type: "adaptive" },
       system: SYSTEM_PROMPT,
       messages,
-      output_config: { format: zodOutputFormat(EditorialKitSchema, "packaging_kit") },
     });
 
-    const kit = res.parsed_output;
+    const textBlock = res.content.find((b): b is Anthropic.TextBlock => b.type === "text");
+    const text = textBlock?.text ?? "";
+    const { kit, error } = parseEditorial(text);
+
     if (kit) {
       const violations = validateKit(kit);
       if (violations.length === 0) return kit;
-      lastViolations = violations;
+      last = violations.join("; ");
       messages.push(
-        { role: "assistant", content: JSON.stringify(kit) },
+        { role: "assistant", content: text },
         {
           role: "user",
           content:
             "Ton kit a violé ces règles strictes :\n- " +
             violations.join("\n- ") +
-            "\nRenvoie un kit corrigé qui respecte TOUTES les règles. Conserve le reste.",
+            "\nRenvoie UNIQUEMENT le JSON corrigé qui respecte TOUTES les règles.",
+        },
+      );
+    } else {
+      last = error ?? "sortie illisible";
+      messages.push(
+        { role: "assistant", content: text || "(vide)" },
+        {
+          role: "user",
+          content: `Sortie invalide (${last}). Renvoie UNIQUEMENT un objet JSON valide conforme au schéma, sans texte autour.`,
         },
       );
     }
   }
-  throw new Error(`generation failed after ${maxAttempts} attempts: ${lastViolations.join("; ")}`);
+  throw new Error(`generation failed after ${maxAttempts} attempts: ${last}`);
 }
